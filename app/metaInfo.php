@@ -121,7 +121,7 @@
 
 
 <p>author. "Article Title". <i>Publisher</i>. Website name, date published. Type. date accessed</p>
-<p><?php echo $author_last_name . ", " . $author_first_name . ". \"" . $og_title . "\". " . "<i>" . $publisher . "</i>. " . $website_title . ", " . $full_publish_date . ". " . "Web." . " " . $accessed_date ?></p>
+<p><?php echo $author_last_name . ", " . $author_first_name . ". \"" . $property_ogTitle . "\". " . "<i>" . $publisher . "</i>. " . $website_title . ", " . $full_publish_date . ". " . "Web." . " " . $accessed_date ?></p>
 
 
 <a href="http://localhost:8888/">click to go back</a>

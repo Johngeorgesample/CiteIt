@@ -411,7 +411,7 @@ ul {
   margin: 0;
   padding: 0;
   overflow: hidden;
-  background-color: #33b5e5; }
+  background-color: #000; }
 
 li {
   font-size: 20px;
@@ -429,13 +429,38 @@ li a:hover {
   background-color: #178ab4; }
 
 input[type=text] {
-  width: 30%;
+  width: 50%;
   padding: 12px 20px;
   margin: 8px 0;
   box-sizing: border-box; }
+
+input[type=submit] {
+  background-color: #0288d1;
+  border: none;
+  color: white;
+  padding: 14px 32px;
+  text-decoration: none;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 4px; }
+
+input[type=submit]:hover {
+  background-color: #178ab4; }
 
 .searchBox {
   margin: auto;
   width: 50%;
   padding: 10px;
   text-align: center; }
+
+h1 {
+  font-size: 42px;
+  text-align: center;
+  color: #fff; }
+
+.titleBar {
+  background-color: #0288d1;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden; }
