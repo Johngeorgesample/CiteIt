@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<!--[if lte IE 6]><html class="preIE7 preIE8 preIE9"><![endif]-->
+<!--[if IE 7]><html class="preIE8 preIE9"><![endif]-->
+<!--[if IE 8]><html class="preIE9"><![endif]-->
+<!--[if gte IE 9]><!--><html><!--<![endif]-->
+  <head>
+    <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>CiteIt!</title>
+  <link rel="stylesheet" href="css/main.css" type="text/css">
+  </head>
+  <body>
+    <nav>
+      <ul>
+        <li ng-click="">Web</li>
+        <li ng-click="">Book</li>
+        <li ng-click="">Tweet</li>
+      </ul>
+    </nav>
+
+    <form action="metaInfo.php" method="post">
+      enter url to cite: <input type="text" name="myUrl"><br>
+      <input type="submit" value="Cite">
+    </form>
+  <script
+    src="https://code.jquery.com/jquery-3.2.1.min.js"
+    integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+    crossorigin="anonymous"></script>
+  </body>
+</html>
