@@ -1,9 +1,30 @@
+nav {
+	padding-top: 0px;
+	padding-bottom: 20px;
+}
+
 ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
+    overflow: hidden;
+    background-color: #33b5e5;
 }
 
 li {
+	font-size: 20px;
+	float: left;
 	display: inline;
+}
+
+li a {
+    display: block;
+    color: #fff;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover {
+    background-color: #178ab4;
 }

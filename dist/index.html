@@ -12,15 +12,17 @@
   <body>
     <nav>
       <ul>
-        <li ng-click="">Web</li>
-        <li ng-click="">Book</li>
-        <li ng-click="">Tweet</li>
+        <li ng-click=""><a href="#">Web</a></li>
+        <li ng-click=""><a href="#">Book</a></li>
+        <li ng-click=""><a href="#">Tweet</a></li>
       </ul>
     </nav>
 
     <form action="metaInfo.php" method="post">
-      enter url to cite: <input type="text" name="myUrl"><br>
-      <input type="submit" value="Cite">
+      <div class="searchBox">
+        <input type="text" name="myUrl" placeholder="enter url to cite">
+        <input type="submit" value="Cite">
+      </div>
     </form>
   <script
     src="https://code.jquery.com/jquery-3.2.1.min.js"
