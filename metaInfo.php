@@ -28,9 +28,10 @@
   //author 
   //TODO: add logic to handle multiple authors
   $name_author = $html->find("meta[name='author']", 0)->content;
-  //$meta_Author = $html->find("meta[name='Author']", 0)->content; //WIRED is a prime example of this. Capitalizing letter is a totally new tag
+  $name_Author = $html->find("meta[name='Author']", 0)->content; //WIRED is a prime example of this. Capitalizing letter is a totally new tag
   $property_author = $html->find("meta[property='author']", 0)->content;
   $property_articleAuthor = $html->find("meta[property='article:author']", 0)->content;
+  $name_sailthru_author = $html->find("meta[name='sailthru.author']", 0)->content;
 ?>
 
 <?php //convert article:published_time to d M Y
@@ -88,19 +89,31 @@
 
 
 <?php 
-  if($meta_author == null && $meta_property_author == null) {
-    echo "<p>no author</p>"; //ask user to input missing info
+  if($name_author != null) {
+    $author = $name_author;
+    echo "<p><b>author</b>: " . $name_author . "</p>";
   }
-  elseif($meta_author == null && meta_property_author != null) {
-    echo "<p><b>author</b>: " . $meta_property_author . "</p>";
+  elseif ($name_Author != null) {
+    $author = $name_Author;
+    echo "<p><b>author</b>: " . $name_Author . "</p>";
   }
-  elseif ($meta_property_author == null && meta_author != null){
-    echo "<p><b>author</b>: " . $meta_author . "</p>";
+  elseif ($property_author != null) {
+    $author = $property_author;
+    echo "<p><b>author</b>: " . $property_author . "</p>";
   }
+  elseif ($property_articleAuthor != null) {
+    $author = $property_articleAuthor;
+    echo "<p><b>author</b>: " . $property_articleAuthor . "</p>";
+  }
+   elseif ($name_sailthru_author != null) {
+    $author = $name_sailthru_author;
+    echo "<p><b>author</b>: " . $name_sailthru_author . "</p>";
+  }
+
 ?>
 
 <?php //author styling. lastName, firstName
-  $str = $meta_property_author;
+  $str = $author;
   $str_explode = (explode(" ", $str));
   $author_last_name = $str_explode[1];
   $author_first_name = $str_explode[0];
