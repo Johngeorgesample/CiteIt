@@ -7,33 +7,33 @@
   $html->load_file($_POST["myUrl"]); 
 
   //website title
-  $property-ogSite_name = $html->find("meta[property='og:site_name']", 0)->content;
+  $property_ogSite_name = $html->find("meta[property='og:site_name']", 0)->content;
 
   //article title
   $meta_title = $html->find('title',0)->innertext;
-  $property-ogTitle = $html->find("meta[property='og:title']", 0)->content;
+  $property_ogTitle = $html->find("meta[property='og:title']", 0)->content;
 
   //publisher
-  $publisher = $property-ogSite_name;
+  $publisher = $property_ogSite_name;
   
   //Dates
   $accessed_date = date('d M Y');
 
-  $property-pubishedTime = $html->find("meta[property='article:published_time']", 0)->content;
-  $property-ogPubishedTime = $html->find("meta[property='og:article:published_time']", 0)->content;
-  $name-DisplayDate = $html->find("meta[name='DisplayDate']", 0)->content;
+  $property_pubishedTime = $html->find("meta[property='article:published_time']", 0)->content;
+  $property_ogPubishedTime = $html->find("meta[property='og:article:published_time']", 0)->content;
+  $name_DisplayDate = $html->find("meta[name='DisplayDate']", 0)->content;
 
   $time_date = $html->find('time',0)->innertext;
   
   //author - fix for multi-names
-  $name-author = $html->find("meta[name='author']", 0)->content;
+  $name_author = $html->find("meta[name='author']", 0)->content;
   //$meta_Author = $html->find("meta[name='Author']", 0)->content; //WIRED is a prime example of this. Capitalizing letter is a totally new tag
-  $property-author = $html->find("meta[property='author']", 0)->content;
-  $property-articleAuthor = $html->find("meta[property='article:author']", 0)->content;
+  $property_author = $html->find("meta[property='author']", 0)->content;
+  $property_articleAuthor = $html->find("meta[property='article:author']", 0)->content;
 ?>
 
 <?php //convert article:published_time to d M Y
-  $t_delimited_publish_date = (explode("T", $published_date));
+  $t_delimited_publish_date = (explode("T", $property_pubishedTime));
   $hyphen_delimited_publish_date = $t_delimited_publish_date[0];
   $publish_date_array = (explode("-", $hyphen_delimited_publish_date));
 
@@ -79,8 +79,8 @@
 ?>
 
 <p><b>url</b>: <?php echo $_POST["myUrl"] ?></p>
-<p><b>website title</b>: <?php echo $property-ogSite_name?></p> <!--if null, use article title-->
-<p><b>article title</b>: <?php echo $og_title?></p>
+<p><b>website title</b>: <?php echo $property_ogSite_name?></p> <!--if null, use article title-->
+<p><b>article title</b>: <?php echo $property_ogTitle?></p>
 <p><b>publisher</b>: <?php echo $publisher?></p> <!-- might be same as website_title -->
 <p><b>electronically published</b>: <?php echo $full_publish_date?></p>
 <p><b>Date Accessed</b>: <?php echo $accessed_date?> </p>
