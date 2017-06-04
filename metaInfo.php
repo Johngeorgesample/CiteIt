@@ -25,7 +25,8 @@
 
   $time_date = $html->find('time',0)->innertext;
   
-  //author - fix for multi-names
+  //author 
+  //TODO: add logic to handle multiple authors
   $name_author = $html->find("meta[name='author']", 0)->content;
   //$meta_Author = $html->find("meta[name='Author']", 0)->content; //WIRED is a prime example of this. Capitalizing letter is a totally new tag
   $property_author = $html->find("meta[property='author']", 0)->content;
@@ -86,6 +87,17 @@
 <p><b>Date Accessed</b>: <?php echo $accessed_date?> </p>
 
 
+<?php 
+  if($meta_author == null && $meta_property_author == null) {
+    echo "<p>no author</p>"; //ask user to input missing info
+  }
+  elseif($meta_author == null && meta_property_author != null) {
+    echo "<p><b>author</b>: " . $meta_property_author . "</p>";
+  }
+  elseif ($meta_property_author == null && meta_author != null){
+    echo "<p><b>author</b>: " . $meta_author . "</p>";
+  }
+?>
 
 <?php //author styling. lastName, firstName
   $str = $meta_property_author;
