@@ -458,9 +458,19 @@ h1 {
   text-align: center;
   color: #fff; }
 
+a {
+  text-decoration: none;
+  color: #fff; }
+
+a:visited {
+  color: #fff; }
+
 .titleBar {
   background-color: #0288d1;
   list-style-type: none;
   margin: 0;
   padding: 0;
   overflow: hidden; }
+
+.container {
+  padding-left: 20px; }

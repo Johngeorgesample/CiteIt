@@ -7,7 +7,7 @@
 </head>
 <body>
   <div class="titleBar">
-    <h1>CiteIt!</h1>
+    <h1><a href="http://localhost:8888/">CiteIt!</a></h1>
   </div>
   <nav>
     <ul>
@@ -133,13 +133,13 @@
   <p><b>publisher</b>: <?php echo $publisher?></p> <!-- might be same as website_title -->
   <p><b>electronically published</b>: <?php echo $full_publish_date?></p>
   <p><b>Date Accessed</b>: <?php echo $accessed_date?> </p>
+
+  <p>--------------------------------------------</p>
+
+  <p>author. "Article Title". <i>Publisher</i>. Website name, date published. Type. date accessed</p>
+  <p><?php echo $author_last_name . ", " . $author_first_name . ". \"" . $property_ogTitle . "\". " . "<i>" . $publisher . "</i>. " . $property_ogSite_name . ", " . $full_publish_date . ". " . "Web." . " " . $accessed_date ?></p>
+
 </div>
-
-
-<p>author. "Article Title". <i>Publisher</i>. Website name, date published. Type. date accessed</p>
-<p><?php echo $author_last_name . ", " . $author_first_name . ". \"" . $property_ogTitle . "\". " . "<i>" . $publisher . "</i>. " . $property_ogSite_name . ", " . $full_publish_date . ". " . "Web." . " " . $accessed_date ?></p>
-
-
 <a href="http://localhost:8888/">click to go back</a>
 
 </body>

@@ -4,6 +4,15 @@ h1 {
 	color: $white;
 }
 
+a {
+	text-decoration: none;
+	color: $white;
+}
+
+a:visited {
+	color: $white;
+}
+
 .titleBar {
   background-color: $brand;
   list-style-type: none;
