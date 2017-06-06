@@ -22,6 +22,13 @@
   $html = new simple_html_dom();
   $html->load_file($_POST["myUrl"]); 
 
+  $authorIsNull = true;
+  $websiteTitleIsNull = true;
+  $articleTitleIsNull = true;
+  $publisherIsNull = true;
+  $publishedDateIsNull = true;
+  //$accessedDateIsNull = true;
+
   //website title
   $property_ogSite_name = $html->find("meta[property='og:site_name']", 0)->content;
 
@@ -51,7 +58,16 @@
 ?>
 
 <?php //convert article:published_time to d M Y
-  $t_delimited_publish_date = (explode("T", $property_pubishedTime));
+  if($property_pubishedTime != null) {
+    $publishedDateIsNull = false;
+    $publishedTime = $property_pubishedTime;
+  }
+  elseif($property_ogPubishedTime != null) {
+    $publishedDateIsNull = false;
+    $publishedTime = $property_ogPubishedTime;
+  }
+
+  $t_delimited_publish_date = (explode("T", $publishedTime));
   $hyphen_delimited_publish_date = $t_delimited_publish_date[0];
   $publish_date_array = (explode("-", $hyphen_delimited_publish_date));
 
@@ -61,6 +77,9 @@
 
   if($publish_date_month == 05) { //ghetto way to do months. Will be dependent on citation style
     $publish_date_month = "May";
+  }
+  elseif($publish_date_month == 06) {
+    $publish_date_month = "June";
   }
 
   $full_publish_date = $publish_date_day . " " . $publish_date_month . " " . $publish_date_year;
@@ -99,22 +118,27 @@
 <div class="container">
   <?php 
     if($name_author != null) {
+      $authorIsNull = false;
       $author = $name_author;
       echo "<p><b>author</b>: " . $name_author . "</p>";
     }
     elseif ($name_Author != null) {
+      $authorIsNull = false;
       $author = $name_Author;
       echo "<p><b>author</b>: " . $name_Author . "</p>";
     }
     elseif ($property_author != null) {
+      $authorIsNull = false;
       $author = $property_author;
       echo "<p><b>author</b>: " . $property_author . "</p>";
     }
     elseif ($property_articleAuthor != null) {
+      $authorIsNull = false;
       $author = $property_articleAuthor;
       echo "<p><b>author</b>: " . $property_articleAuthor . "</p>";
     }
     elseif ($name_sailthru_author != null) {
+      $authorIsNull = false;
       $author = $name_sailthru_author;
       echo "<p><b>author</b>: " . $name_sailthru_author . "</p>";
     }
@@ -134,13 +158,30 @@
   <p><b>electronically published</b>: <?php echo $full_publish_date?></p>
   <p><b>Date Accessed</b>: <?php echo $accessed_date?> </p>
 
+  <?php //todo: fix false positives that don't change because they don't have if statements
+    if($authorIsNull == true) {
+      echo "need an author";
+    }
+    elseif($websiteTitleIsNull == true) {
+      echo "need a website title";
+    }
+    elseif($articleTitleIsNull == true) {
+      echo "need an article title";
+    }
+    elseif($publisherIsNull == true) {
+      echo "need apublisher";
+    }
+    elseif($publishedDateIsNull == true) {
+      echo "need a published date";
+    }
+  ?>
+
   <p>--------------------------------------------</p>
 
   <p>author. "Article Title". <i>Publisher</i>. Website name, date published. Type. date accessed</p>
   <p><?php echo $author_last_name . ", " . $author_first_name . ". \"" . $property_ogTitle . "\". " . "<i>" . $publisher . "</i>. " . $property_ogSite_name . ", " . $full_publish_date . ". " . "Web." . " " . $accessed_date ?></p>
 
 </div>
-<a href="http://localhost:8888/">click to go back</a>
 
 </body>
 </html>
