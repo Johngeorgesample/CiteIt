@@ -1,5 +1,21 @@
 <html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>CiteIt!</title>
+  <link rel="stylesheet" href="css/main.css" type="text/css">
+</head>
 <body>
+  <div class="titleBar">
+    <h1>CiteIt!</h1>
+  </div>
+  <nav>
+    <ul>
+      <li ng-click=""><a href="#">Web</a></li>
+      <li ng-click=""><a href="#">Book</a></li>
+      <li ng-click=""><a href="#">Tweet</a></li>
+    </ul>
+  </nav>
 
 <?php
   include('simple_html_dom.php');
@@ -80,48 +96,48 @@
   */
 ?>
 
-<p><b>url</b>: <?php echo $_POST["myUrl"] ?></p>
-<p><b>website title</b>: <?php echo $property_ogSite_name?></p> <!--if null, use article title-->
-<p><b>article title</b>: <?php echo $property_ogTitle?></p>
-<p><b>publisher</b>: <?php echo $publisher?></p> <!-- might be same as website_title -->
-<p><b>electronically published</b>: <?php echo $full_publish_date?></p>
-<p><b>Date Accessed</b>: <?php echo $accessed_date?> </p>
+<div class="container">
+  <?php 
+    if($name_author != null) {
+      $author = $name_author;
+      echo "<p><b>author</b>: " . $name_author . "</p>";
+    }
+    elseif ($name_Author != null) {
+      $author = $name_Author;
+      echo "<p><b>author</b>: " . $name_Author . "</p>";
+    }
+    elseif ($property_author != null) {
+      $author = $property_author;
+      echo "<p><b>author</b>: " . $property_author . "</p>";
+    }
+    elseif ($property_articleAuthor != null) {
+      $author = $property_articleAuthor;
+      echo "<p><b>author</b>: " . $property_articleAuthor . "</p>";
+    }
+    elseif ($name_sailthru_author != null) {
+      $author = $name_sailthru_author;
+      echo "<p><b>author</b>: " . $name_sailthru_author . "</p>";
+    }
+  ?>
 
+  <?php //author styling. lastName, firstName
+    $str = $author;
+    $str_explode = (explode(" ", $str));
+    $author_last_name = $str_explode[1];
+    $author_first_name = $str_explode[0];
+  ?>
 
-<?php 
-  if($name_author != null) {
-    $author = $name_author;
-    echo "<p><b>author</b>: " . $name_author . "</p>";
-  }
-  elseif ($name_Author != null) {
-    $author = $name_Author;
-    echo "<p><b>author</b>: " . $name_Author . "</p>";
-  }
-  elseif ($property_author != null) {
-    $author = $property_author;
-    echo "<p><b>author</b>: " . $property_author . "</p>";
-  }
-  elseif ($property_articleAuthor != null) {
-    $author = $property_articleAuthor;
-    echo "<p><b>author</b>: " . $property_articleAuthor . "</p>";
-  }
-   elseif ($name_sailthru_author != null) {
-    $author = $name_sailthru_author;
-    echo "<p><b>author</b>: " . $name_sailthru_author . "</p>";
-  }
-
-?>
-
-<?php //author styling. lastName, firstName
-  $str = $author;
-  $str_explode = (explode(" ", $str));
-  $author_last_name = $str_explode[1];
-  $author_first_name = $str_explode[0];
-?>
+  <p><b>url</b>: <?php echo $_POST["myUrl"] ?></p>
+  <p><b>website title</b>: <?php echo $property_ogSite_name?></p> <!--if null, use article title-->
+  <p><b>article title</b>: <?php echo $property_ogTitle?></p>
+  <p><b>publisher</b>: <?php echo $publisher?></p> <!-- might be same as website_title -->
+  <p><b>electronically published</b>: <?php echo $full_publish_date?></p>
+  <p><b>Date Accessed</b>: <?php echo $accessed_date?> </p>
+</div>
 
 
 <p>author. "Article Title". <i>Publisher</i>. Website name, date published. Type. date accessed</p>
-<p><?php echo $author_last_name . ", " . $author_first_name . ". \"" . $property_ogTitle . "\". " . "<i>" . $publisher . "</i>. " . $website_title . ", " . $full_publish_date . ". " . "Web." . " " . $accessed_date ?></p>
+<p><?php echo $author_last_name . ", " . $author_first_name . ". \"" . $property_ogTitle . "\". " . "<i>" . $publisher . "</i>. " . $property_ogSite_name . ", " . $full_publish_date . ". " . "Web." . " " . $accessed_date ?></p>
 
 
 <a href="http://localhost:8888/">click to go back</a>
