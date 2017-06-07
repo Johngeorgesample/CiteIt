@@ -158,21 +158,26 @@
   <p><b>electronically published</b>: <?php echo $full_publish_date?></p>
   <p><b>Date Accessed</b>: <?php echo $accessed_date?> </p>
 
+  <h3>What we still need:</h3>
+
   <?php //todo: fix false positives that don't change because they don't have if statements
     if($authorIsNull == true) {
-      echo "need an author";
+      echo "<p><b>author</b></p>:";
+      echo '<form><input type=\"text\" placeholder="Mark Twain"></form>';
     }
     elseif($websiteTitleIsNull == true) {
-      echo "need a website title";
+      echo "<p><b>website title</b></p>";
+      echo '<form><input type=\"text\" placeholder="The Verge"></form>';
     }
     elseif($articleTitleIsNull == true) {
-      echo "need an article title";
+      echo "<p><b>article title</b></p>";
+      echo '<form><input type=\"text\" placeholder="iPhone 12+S hands on"></form>';
     }
     elseif($publisherIsNull == true) {
-      echo "need apublisher";
+      echo "<p><b>publisher</b></p>";
     }
     elseif($publishedDateIsNull == true) {
-      echo "need a published date";
+      echo "<p><b>published date</b></p>";
     }
   ?>
 
