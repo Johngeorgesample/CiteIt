@@ -44,7 +44,7 @@
   }
   
   //Dates
-  $accessed_date = date('d M Y');
+  $accessed_date = date('d F Y');
 
   $property_pubishedTime = $html->find("meta[property='article:published_time']", 0)->content;
   $property_ogPubishedTime = $html->find("meta[property='og:article:published_time']", 0)->content;
