@@ -38,6 +38,10 @@
 
   //publisher
   $publisher = $property_ogSite_name;
+  if ($property_ogSite_name != null) {
+    $publisherIsNull = false;
+    $websiteTitleIsNull = false;
+  }
   
   //Dates
   $accessed_date = date('d M Y');
@@ -55,6 +59,17 @@
   $property_author = $html->find("meta[property='author']", 0)->content;
   $property_articleAuthor = $html->find("meta[property='article:author']", 0)->content;
   $name_sailthru_author = $html->find("meta[name='sailthru.author']", 0)->content;
+?>
+
+<?php 
+  if($property_ogTitle != null) {
+    $articleTitleIsNull = false;
+    $articleTitle = $property_ogTitle;
+  }
+  elseif($meta_title != null) {
+    $articleTitleIsNull = false;
+    $articleTitle = $meta_title;
+  }
 ?>
 
 <?php //convert article:published_time to d M Y
@@ -153,31 +168,37 @@
 
   <p><b>url</b>: <?php echo $_POST["myUrl"] ?></p>
   <p><b>website title</b>: <?php echo $property_ogSite_name?></p> <!--if null, use article title-->
-  <p><b>article title</b>: <?php echo $property_ogTitle?></p>
+  <p><b>article title</b>: <?php echo $articleTitle?></p>
   <p><b>publisher</b>: <?php echo $publisher?></p> <!-- might be same as website_title -->
   <p><b>electronically published</b>: <?php echo $full_publish_date?></p>
   <p><b>Date Accessed</b>: <?php echo $accessed_date?> </p>
 
-  <h3>What we still need:</h3>
+  <?php
+  if( $authorIsNull == true || $websiteTitleIsNull == true || $articleTitleIsNull == true || $publisherIsNull == true || $publishedDateIsNull == true) {
 
-  <?php //todo: fix false positives that don't change because they don't have if statements
+      echo "<p>--------------------------------------------</p>";
+      echo "<h3>What we still need:</h3>";
+
+  }
     if($authorIsNull == true) {
       echo "<p><b>author</b></p>:";
       echo '<form><input type=\"text\" placeholder="Mark Twain"></form>';
     }
-    elseif($websiteTitleIsNull == true) {
+    if($websiteTitleIsNull == true) {
       echo "<p><b>website title</b></p>";
       echo '<form><input type=\"text\" placeholder="The Verge"></form>';
     }
-    elseif($articleTitleIsNull == true) {
+    if($articleTitleIsNull == true) {
       echo "<p><b>article title</b></p>";
       echo '<form><input type=\"text\" placeholder="iPhone 12+S hands on"></form>';
     }
-    elseif($publisherIsNull == true) {
+    if($publisherIsNull == true) {
       echo "<p><b>publisher</b></p>";
+      echo '<form><input type=\"text\" placeholder="New York Times"></form>';
     }
-    elseif($publishedDateIsNull == true) {
+    if($publishedDateIsNull == true) {
       echo "<p><b>published date</b></p>";
+      echo '<form><input type=\"text\" placeholder="06-12-2017"></form>';
     }
   ?>
 
