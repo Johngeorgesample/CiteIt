@@ -426,7 +426,8 @@ li a {
   text-decoration: none; }
 
 li a:hover {
-  background-color: #178ab4; }
+  background-color: #0288d1;
+  color: #fff; }
 
 input[type=text] {
   width: 50%;
