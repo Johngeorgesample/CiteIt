@@ -48,6 +48,7 @@
 
   $property_pubishedTime = $html->find("meta[property='article:published_time']", 0)->content;
   $property_ogPubishedTime = $html->find("meta[property='og:article:published_time']", 0)->content;
+  $property_articlePublished = $html->find("meta[property='article:published']", 0)->content;
   $name_DisplayDate = $html->find("meta[name='DisplayDate']", 0)->content;
 
   $time_date = $html->find('time',0)->innertext;
@@ -57,7 +58,7 @@
   $name_author = $html->find("meta[name='author']", 0)->content;
   $name_Author = $html->find("meta[name='Author']", 0)->content; //WIRED is a prime example of this. Capitalizing letter is a totally new tag
   $property_author = $html->find("meta[property='author']", 0)->content;
-  $property_articleAuthor = $html->find("meta[property='article:author']", 0)->content;
+  $property_articleAuthor = $html->find("meta[property='article:author']", 0)->content; //TODO: fix this, it's not working
   $name_sailthru_author = $html->find("meta[name='sailthru.author']", 0)->content;
 ?>
 
@@ -81,6 +82,12 @@
     $publishedDateIsNull = false;
     $publishedTime = $property_ogPubishedTime;
   }
+  elseif($property_articlePublished != null) {
+    $publishedDateIsNull = false;
+    $publishedTime = $property_articlePublished;
+  }
+
+  echo $property_articlePublished;
 
   $t_delimited_publish_date = (explode("T", $publishedTime));
   $hyphen_delimited_publish_date = $t_delimited_publish_date[0];
