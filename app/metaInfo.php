@@ -181,23 +181,23 @@
 
   }
     if($authorIsNull == true) {
-      echo "<p><b>author</b></p>:";
+      echo "<p><b>author:</b></p>";
       echo '<form><input type=\"text\" placeholder="Mark Twain"></form>';
     }
     if($websiteTitleIsNull == true) {
-      echo "<p><b>website title</b></p>";
+      echo "<p><b>website title:</b></p>";
       echo '<form><input type=\"text\" placeholder="The Verge"></form>';
     }
     if($articleTitleIsNull == true) {
-      echo "<p><b>article title</b></p>";
+      echo "<p><b>article title:</b></p>";
       echo '<form><input type=\"text\" placeholder="iPhone 12+S hands on"></form>';
     }
     if($publisherIsNull == true) {
-      echo "<p><b>publisher</b></p>";
+      echo "<p><b>publisher:</b></p>";
       echo '<form><input type=\"text\" placeholder="New York Times"></form>';
     }
     if($publishedDateIsNull == true) {
-      echo "<p><b>published date</b></p>";
+      echo "<p><b>published date:</b></p>";
       echo '<form><input type=\"text\" placeholder="06-12-2017"></form>';
     }
   ?>
