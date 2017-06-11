@@ -429,12 +429,6 @@ li a:hover {
   background-color: #0288d1;
   color: #fff; }
 
-input[type=text] {
-  width: 50%;
-  padding: 12px 20px;
-  margin: 8px 0;
-  box-sizing: border-box; }
-
 input[type=submit] {
   background-color: #0288d1;
   border: none;
@@ -453,6 +447,12 @@ input[type=submit]:hover {
   width: 50%;
   padding: 10px;
   text-align: center; }
+
+.myBox {
+  width: 50%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box; }
 
 h1 {
   font-size: 42px;
