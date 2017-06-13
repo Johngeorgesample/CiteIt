@@ -88,8 +88,6 @@
     $publishedTime = $property_articlePublished;
   }
 
-  echo $property_articlePublished;
-
   $t_delimited_publish_date = (explode("T", $publishedTime));
   $hyphen_delimited_publish_date = $t_delimited_publish_date[0];
   $publish_date_array = (explode("-", $hyphen_delimited_publish_date));
@@ -106,36 +104,6 @@
   }
 
   $full_publish_date = $publish_date_day . " " . $publish_date_month . " " . $publish_date_year;
-
-  /*
-    --MLA & Chicago--
-    Jan.
-    Feb.
-    Mar.
-    Apr.
-    May
-    June
-    July
-    Aug.
-    Sept.
-    Oct.
-    Nov.
-    Dec
-
-    --AP--
-    Jan.
-    Feb.
-    March
-    April
-    May
-    June
-    July
-    Aug.
-    Sept.
-    Oct.
-    Nov.
-    Dec.
-  */
 ?>
 
 <div class="container">
@@ -184,7 +152,7 @@
   <?php
   if( $authorIsNull == true || $websiteTitleIsNull == true || $articleTitleIsNull == true || $publisherIsNull == true || $publishedDateIsNull == true) {
 
-      echo "<p>--------------------------------------------</p>";
+      echo "<hr>";
       echo "<h3>What we still need:</h3>";
 
   }
@@ -205,12 +173,11 @@
       echo '<form><input type=\"text\" placeholder="New York Times"></form>';
     }
     if($publishedDateIsNull == true) {
-      echo "<p><b>published date:</b></p>";
-      echo '<p>Date: <input type="text" id="datepicker"></p>'; //TODO: style, fix date format to reuse explode method
+      echo '<p><b>published Date: </b><input type="text" id="datepicker"></p>'; //TODO: style, fix date format to reuse explode method
     }
   ?>
 
-  <p>--------------------------------------------</p>
+  <hr>
 
   <p>author. "Article Title". <i>Publisher</i>. Website name, date published. Type. date accessed</p>
   <p><?php echo $author_last_name . ", " . $author_first_name . ". \"" . $property_ogTitle . "\". " . "<i>" . $publisher . "</i>. " . $property_ogSite_name . ", " . $full_publish_date . ". " . "Web." . " " . $accessed_date ?></p>
