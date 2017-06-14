@@ -16,12 +16,23 @@
       <h1>CiteIt!</h1>
     </div>
     <nav>
-      <ul>
-        <li ng-click=""><a href="#">Web</a></li>
-        <li ng-click=""><a href="#">Book</a></li>
-        <li ng-click=""><a href="#">Tweet</a></li>
+      <ul class="nav-ul">
+        <li class="nav-li" ng-click=""><a href="#">Web</a></li>
+        <li class="nav-li" ng-click=""><a href="#">Book</a></li>
+        <li class="nav-li" ng-click=""><a href="#">Tweet</a></li>
       </ul>
     </nav>
+
+    <div class="radio-toolbar">
+      <input type="radio" id="radio1" name="radios" value="true">
+      <label for="radio1">MLA</label>
+
+      <input type="radio" id="radio2" name="radios" value="false">
+      <label for="radio2">APA</label>
+
+      <input type="radio" id="radio3" name="radios" value="true">
+      <label for="radio3">Chicago</label>
+    </div>
 
     <form action="metaInfo.php" method="post">
       <div class="searchBox">
