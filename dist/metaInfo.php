@@ -23,6 +23,11 @@
   $html = new simple_html_dom();
   $html->load_file($_POST["myUrl"]); 
 
+
+  $citationStyle =  $_POST["citationStyle"];
+
+  echo $citationStyle;
+
   $authorIsNull = true;
   $websiteTitleIsNull = true;
   $articleTitleIsNull = true;

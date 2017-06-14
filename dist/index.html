@@ -24,17 +24,18 @@
     </nav>
 
     <div class="radio-toolbar">
-      <input type="radio" id="radio1" name="radios" value="true">
+      <form action="metaInfo.php" method="post">
+      <input type="radio" id="radio1" name="citationStyle" value="MLA" checked>
       <label for="radio1">MLA</label>
 
-      <input type="radio" id="radio2" name="radios" value="false">
+      <input type="radio" id="radio2" name="citationStyle" value="APA">
       <label for="radio2">APA</label>
 
-      <input type="radio" id="radio3" name="radios" value="true">
+      <input type="radio" id="radio3" name="citationStyle" value="Chicago">
       <label for="radio3">Chicago</label>
     </div>
 
-    <form action="metaInfo.php" method="post">
+    
       <div class="searchBox">
         <input type="text" class="myBox" name="myUrl" placeholder="enter url to cite">
         <input type="submit" value="Cite">
