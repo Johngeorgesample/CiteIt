@@ -425,7 +425,7 @@ nav {
   padding: 14px 16px;
   text-decoration: none; }
 
-.nav-li a:hover {
+.is-active {
   background-color: #0288d1;
   color: #fff; }
 

@@ -25,7 +25,12 @@ nav {
     text-decoration: none;
 }
 
-.nav-li a:hover {
+// .nav-li a:hover {
+//     background-color: $brand;
+//     color: $white;
+// }
+
+.is-active {
     background-color: $brand;
     color: $white;
 }
