@@ -22,8 +22,6 @@
   include('simple_html_dom.php');
   $html = new simple_html_dom();
   $html->load_file($_POST["myUrl"]); 
-
-
   $citationStyle =  $_POST["citationStyle"];
 
   echo $citationStyle;
@@ -66,6 +64,8 @@
   $property_author = $html->find("meta[property='author']", 0)->content;
   $property_articleAuthor = $html->find("meta[property='article:author']", 0)->content; //TODO: fix this, it's not working
   $name_sailthru_author = $html->find("meta[name='sailthru.author']", 0)->content;
+
+  $author_first_name_first_letter = 'B'; //TODO: don't actually hardcode this
 ?>
 
 <?php 
@@ -184,8 +184,16 @@
 
   <hr>
 
-  <p>author. "Article Title". <i>Publisher</i>. Website name, date published. Type. date accessed</p>
-  <p><?php echo $author_last_name . ", " . $author_first_name . ". \"" . $property_ogTitle . "\". " . "<i>" . $publisher . "</i>. " . $property_ogSite_name . ", " . $full_publish_date . ". " . "Web." . " " . $accessed_date ?></p>
+  <?php
+    if($citationStyle == 'MLA') {
+      echo $author_last_name . ", " . $author_first_name . ". \"" . $property_ogTitle . "\". " . "<i>" . $publisher . "</i>. " . $property_ogSite_name . ", " . $full_publish_date . ". " . "Web." . " " . $accessed_date;
+    }
+
+    elseif ($citationStyle == 'APA') {
+      echo $author_last_name . ", " . $author_first_name_first_letter . ". " . "(" . date('Y M d') . ") " . $articleTitle . ". " . "Retrieved " . $accessed_date . ", " . "from " . $_POST["myUrl"];
+    }
+  ?>
+
 
 </div>
 
