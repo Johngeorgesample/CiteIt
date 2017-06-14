@@ -65,7 +65,7 @@
   $property_articleAuthor = $html->find("meta[property='article:author']", 0)->content; //TODO: fix this, it's not working
   $name_sailthru_author = $html->find("meta[name='sailthru.author']", 0)->content;
 
-  $author_first_name_first_letter = 'B'; //TODO: don't actually hardcode this
+ 
 ?>
 
 <?php 
@@ -145,6 +145,8 @@
     $str_explode = (explode(" ", $str));
     $author_last_name = $str_explode[1];
     $author_first_name = $str_explode[0];
+
+    $author_first_name_first_letter = $author_first_name[0]; 
   ?>
 
   <p><b>url</b>: <?php echo $_POST["myUrl"] ?></p>
