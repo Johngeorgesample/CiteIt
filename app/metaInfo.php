@@ -1,3 +1,6 @@
+<?php
+  session_start();
+?>
 <html>
 <head>
   <meta charset="UTF-8">
@@ -148,7 +151,7 @@
 
     $author_first_name_first_letter = $author_first_name[0]; 
   ?>
-  
+
   <h3>What we got</h3>
 
   <p><b>url</b>: <?php echo $_POST["myUrl"] ?></p>
@@ -198,6 +201,11 @@
     }
   ?>
 
+  <?php
+    $_SESSION['author'] = $author;
+  ?>
+
+<a href="testPage.php">this is a link</a>
 
 </div>
 
