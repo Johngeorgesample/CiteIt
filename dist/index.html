@@ -23,23 +23,23 @@
       </ul>
     </nav>
 
-    <div class="radio-toolbar">
-      <form action="metaInfo.php" method="post">
-      <input type="radio" id="radio1" name="citationStyle" value="MLA" checked>
-      <label for="radio1">MLA</label>
+    <form action="metaInfo.php" method="post">
+      <div class="radio-toolbar">
+        <input type="radio" id="radio1" name="citationStyle" value="MLA" checked>
+        <label for="radio1">MLA</label>
 
-      <input type="radio" id="radio2" name="citationStyle" value="APA">
-      <label for="radio2">APA</label>
+        <input type="radio" id="radio2" name="citationStyle" value="APA">
+        <label for="radio2">APA</label>
 
-      <input type="radio" id="radio3" name="citationStyle" value="Chicago">
-      <label for="radio3">Chicago</label>
-    </div>
-
-    
-      <div class="searchBox">
-        <input type="text" class="myBox" name="myUrl" placeholder="enter url to cite">
-        <input type="submit" value="Cite">
+        <input type="radio" id="radio3" name="citationStyle" value="Chicago">
+        <label for="radio3">Chicago</label>
       </div>
+
+      
+        <div class="searchBox">
+          <input type="text" class="myBox" name="myUrl" placeholder="enter url to cite">
+          <input type="submit" value="Cite">
+        </div>
     </form>
   
   <script src="https://code.jquery.com/jquery-1.12.4.js"></script>

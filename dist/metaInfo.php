@@ -148,6 +148,8 @@
 
     $author_first_name_first_letter = $author_first_name[0]; 
   ?>
+  
+  <h3>What we got</h3>
 
   <p><b>url</b>: <?php echo $_POST["myUrl"] ?></p>
   <p><b>website title</b>: <?php echo $property_ogSite_name?></p> <!--if null, use article title-->
