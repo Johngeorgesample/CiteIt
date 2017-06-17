@@ -213,7 +213,7 @@
 
   ?>
 
-<a href="testPage.php">this is a link</a>
+<a href="results.php">this is a link</a>
 
 </div>
 
