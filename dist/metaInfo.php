@@ -203,6 +203,14 @@
 
   <?php
     $_SESSION['author'] = $author;
+    $_SESSION['author_last_name'] = $author_last_name;
+    $_SESSION['author_first_name'] = $author_first_name;
+    $_SESSION['title'] = $title; //TODO: make title variable
+    $_SESSION['publisher'] = $publisher;
+    $_SESSION['siteName'] = $siteName; //TODO: make siteName variable
+    $_SESSION['full_publish_date'] = $full_publish_date;
+    $_SESSION['accessed_date'] = $accessed_date;
+
   ?>
 
 <a href="testPage.php">this is a link</a>
