@@ -193,7 +193,7 @@
 
   <?php
     if($citationStyle == 'MLA') {
-      echo $author_last_name . ", " . $author_first_name . ". \"" . $property_ogTitle . "\". " . "<i>" . $publisher . "</i>. " . $property_ogSite_name . ", " . $full_publish_date . ". " . "Web." . " " . $accessed_date;
+      echo $author_last_name . ", " . $author_first_name . ". \"" . $articleTitle . "\". " . "<i>" . $publisher . "</i>. " . $property_ogSite_name . ", " . $full_publish_date . ". " . "Web." . " " . $accessed_date;
     }
 
     elseif ($citationStyle == 'APA') {
@@ -205,7 +205,7 @@
     $_SESSION['author'] = $author;
     $_SESSION['author_last_name'] = $author_last_name;
     $_SESSION['author_first_name'] = $author_first_name;
-    $_SESSION['title'] = $title; //TODO: make title variable
+    $_SESSION['articleTitle'] = $articleTitle;
     $_SESSION['publisher'] = $publisher;
     $_SESSION['siteName'] = $siteName; //TODO: make siteName variable
     $_SESSION['full_publish_date'] = $full_publish_date;

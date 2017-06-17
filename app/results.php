@@ -24,12 +24,17 @@
 
 <?php
   echo $_SESSION['author'];
-
+  echo "<br>";
   echo $_SESSION['author_last_name'];
+  echo "<br>";
   echo $_SESSION['author_first_name'];
- // $_SESSION['title'] = $title; //TODO: make title variable
+  echo "<br>";
+  echo $_SESSION['articleTitle'];
+  echo "<br>";
   echo $_SESSION['publisher'];
+  echo "<br>";
   //$_SESSION['siteName'] = $siteName; //TODO: make siteName variable
   echo $_SESSION['full_publish_date'];
+  echo "<br>";
  echo  $_SESSION['accessed_date'];
 ?>
