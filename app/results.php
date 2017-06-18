@@ -31,6 +31,7 @@
   $articleTitle = $_SESSION['articleTitle'];
   $publisher = $_SESSION['publisher'];
   //$_SESSION['siteName'] = $siteName; //TODO: make siteName variable
+  $accessed_date = $_SESSION['accessed_date'];
  
 
   if($_SESSION['author'] == null) {
