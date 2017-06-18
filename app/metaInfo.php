@@ -154,55 +154,13 @@
     $author_first_name_first_letter = $author_first_name[0]; 
   ?>
 
+  <!-- TODO: stop displaying things that are null -->
   <p><b>url</b>: <?php echo $_POST["myUrl"] ?></p>
   <p><b>website title</b>: <?php echo $property_ogSite_name?></p> <!--if null, use article title-->
   <p><b>article title</b>: <?php echo $articleTitle?></p>
   <p><b>publisher</b>: <?php echo $publisher?></p> <!-- might be same as website_title -->
   <p><b>electronically published</b>: <?php echo $full_publish_date?></p>
   <p><b>Date Accessed</b>: <?php echo $accessed_date?> </p>
-
-
-  <form action="results.php" method="post">
-  <?php
-  if( $authorIsNull == true || $websiteTitleIsNull == true || $articleTitleIsNull == true || $publisherIsNull == true || $publishedDateIsNull == true) {
-
-      echo "<hr>";
-      echo "<h3>What we still need:</h3>";
-
-  }
-    if($authorIsNull == true) {
-      echo "<p><b>author:</b></p>";
-      echo '<form><input type=\"text\" placeholder="Mark Twain"></form>';
-    }
-    if($websiteTitleIsNull == true) {
-      echo "<p><b>website title:</b></p>";
-      echo '<form><input type=\"text\" placeholder="The Verge"></form>';
-    }
-    if($articleTitleIsNull == true) {
-      echo "<p><b>article title:</b></p>";
-      echo '<form><input type=\"text\" placeholder="iPhone 12+S hands on"></form>';
-    }
-    if($publisherIsNull == true) {
-      echo "<p><b>publisher:</b></p>";
-      echo '<form><input type=\"text\" placeholder="New York Times"></form>';
-    }
-    if($publishedDateIsNull == true) {
-      echo '<p><b>published Date: </b><input type="text" id="datepicker" name="datepickerDate"></p>'; //TODO: style, fix date format to reuse explode method
-    }
-  ?>
-  <input type="submit" value="Cite">
-</form>
-  <hr>
-
-  <?php
-    if($citationStyle == 'MLA') {
-      echo $author_last_name . ", " . $author_first_name . ". \"" . $articleTitle . "\". " . "<i>" . $publisher . "</i>. " . $property_ogSite_name . ", " . $full_publish_date . ". " . "Web." . " " . $accessed_date;
-    }
-
-    elseif ($citationStyle == 'APA') {
-      echo $author_last_name . ", " . $author_first_name_first_letter . ". " . "(" . date('Y M d') . ") " . $articleTitle . ". " . "Retrieved " . $accessed_date . ", " . "from " . $_POST["myUrl"];
-    }
-  ?>
 
   <?php
     $_SESSION['citationStyle'] = $citationStyle;
@@ -215,12 +173,37 @@
     $_SESSION['siteName'] = $siteName; //TODO: make siteName variable
     //$_SESSION['full_publish_date'] = $full_publish_date;
     $_SESSION['accessed_date'] = $accessed_date;
-
+    $_SESSION['hyphen_delimited_publish_date'] = $hyphen_delimited_publish_date;
   ?>
 
-<a href="results.php">this is a link</a>
 
+  <form action="results.php" method="post">
+    <?php
+    if( $authorIsNull == true || $websiteTitleIsNull == true || $articleTitleIsNull == true || $publisherIsNull == true || $publishedDateIsNull == true) {
 
+        echo "<hr>";
+        echo "<h3>What we still need:</h3>";
+
+    }
+      if($authorIsNull == true) {
+        echo '<p><b>author: </b> <input type="text" placeholder="Mark Twain" name="author"></p>';
+
+      }
+      if($websiteTitleIsNull == true) {
+        echo '<p><b>website title: </b> <input type="text" placeholder="New York Times" name="websiteTitle"></p>';
+      }
+      if($articleTitleIsNull == true) {
+        echo '<p><b>article title: </b> <input type="text" placeholder="MIT Janitor Brilliant at Mathcore" name="articleTitle"></p>';
+      }
+      if($publisherIsNull == true) {
+        echo '<p><b>publisher: </b> <input type="text" placeholder="New York Times" name="publisher"></p>';
+      }
+      if($publishedDateIsNull == true) {
+        echo '<p><b>published Date: </b><input type="text" id="datepicker" placeholder="click to select date" name="datepickerDate"></p>'; //TODO: style, fix date format to reuse explode method
+      }
+    ?>
+  <input type="submit" value="Cite">
+  </form>
 </div>
 
   <script src="https://code.jquery.com/jquery-1.12.4.js"></script>

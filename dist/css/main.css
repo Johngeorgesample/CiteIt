@@ -476,6 +476,9 @@ a:visited {
 .container {
   padding-left: 20px; }
 
+.final-citation {
+  color: blue; }
+
 .radio-toolbar {
   text-align: center; }
 

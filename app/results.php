@@ -32,29 +32,63 @@
   $publisher = $_SESSION['publisher'];
   //$_SESSION['siteName'] = $siteName; //TODO: make siteName variable
   $accessed_date = $_SESSION['accessed_date'];
-  $full_publish_date =  $_POST["datepickerDate"];
+  $hyphen_delimited_publish_date = $_SESSION['hyphen_delimited_publish_date'];
+
+  if($_SESSION['hyphen_delimited_publish_date'] != null) {
+    $publish_date_needs_format = $_SESSION['hyphen_delimited_publish_date'];
+    echo 'fuck';
+  }
+
+  if($_SESSION['hyphen_delimited_publish_date'] == null) {
+    $publish_date_needs_format = $_POST["datepickerDate"];
+  }
+
+  if($_SESSION['author'] == null) {
+    $author = $_POST["author"];
+
+    $str_explode = (explode(" ", $author));
+    $author_last_name = $str_explode[1];
+    $author_first_name = $str_explode[0];
+
+    $author_first_name_first_letter = $author_first_name[0]; 
+  }
+
+  if($_SESSION['articleTitle'] == null) {
+    $articleTitle = $_POST["articleTitle"];
+  }
+  
+  if($_SESSION['publisher'] == null) {
+    $publisher = $_POST["publisher"];
+  }
+
 ?>
 
 <?php
-  if($full_publish_date == null) {
+  if($publish_date_needs_format == null) {
     echo "n.d";
   }
 
   else {
-    $publish_date_array = (explode("-", $full_publish_date));
+    $publish_date_array = (explode("-", $publish_date_needs_format));
     $publish_date_day = $publish_date_array[1];
     $publish_date_year = $publish_date_array[2];
     $publish_date_month = $publish_date_array[0];
+
+    $APA_date = $publish_date_year . ", " .  $publish_date_month . " " . $publish_date_day;
     $full_publish_date = $publish_date_day . " " . $publish_date_month . " " . $publish_date_year;
   }
 ?>
 
-  <?php
-    if($citationStyle == 'MLA') {
-      echo $author_last_name . ", " . $author_first_name . ". \"" . $articleTitle . "\". " . "<i>" . $publisher . "</i>. " . $property_ogSite_name . ", " . $full_publish_date . ". " . "Web." . " " . $accessed_date;
-    }
+<div class="container">
+  <div class="final-citation">
+    <?php
+      if($citationStyle == 'MLA') {
+        echo $author_last_name . ", " . $author_first_name . ". \"" . $articleTitle . "\". " . "<i>" . $publisher . "</i>. " . $property_ogSite_name . ", " . $full_publish_date . ". " . "Web." . " " . $accessed_date;
+      }
 
-    elseif ($citationStyle == 'APA') {
-      echo $author_last_name . ", " . $author_first_name_first_letter . ". " . "(" . $full_publish_date . ") " . $articleTitle . ". " . "Retrieved " . $accessed_date . ", " . "from " . $_POST["myUrl"];
-    }
-  ?>
+      elseif ($citationStyle == 'APA') {
+        echo $author_last_name . ", " . $author_first_name_first_letter . ". " . "(" . $APA_date . ") " . $articleTitle . ". " . "Retrieved " . $accessed_date . ", " . "from " . $_POST["myUrl"];
+      }
+    ?>
+  </div>
+ </div>
