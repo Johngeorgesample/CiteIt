@@ -172,8 +172,7 @@
     $_SESSION['publisher'] = $publisher;
     $_SESSION['siteName'] = $siteName; //TODO: make siteName variable
     //$_SESSION['full_publish_date'] = $full_publish_date;
-    $_SESSION['accessed_date'] = $accessed_date;
-    $_SESSION['hyphen_delimited_publish_date'] = $hyphen_delimited_publish_date;
+
   ?>
 
 

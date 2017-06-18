@@ -31,17 +31,7 @@
   $articleTitle = $_SESSION['articleTitle'];
   $publisher = $_SESSION['publisher'];
   //$_SESSION['siteName'] = $siteName; //TODO: make siteName variable
-  $accessed_date = $_SESSION['accessed_date'];
-  $hyphen_delimited_publish_date = $_SESSION['hyphen_delimited_publish_date'];
-
-  if($_SESSION['hyphen_delimited_publish_date'] != null) {
-    $publish_date_needs_format = $_SESSION['hyphen_delimited_publish_date'];
-    echo 'fuck';
-  }
-
-  if($_SESSION['hyphen_delimited_publish_date'] == null) {
-    $publish_date_needs_format = $_POST["datepickerDate"];
-  }
+ 
 
   if($_SESSION['author'] == null) {
     $author = $_POST["author"];
