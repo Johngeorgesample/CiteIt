@@ -173,7 +173,10 @@
     $_SESSION['siteName'] = $siteName; //TODO: make siteName variable
     //$_SESSION['full_publish_date'] = $full_publish_date;
     $_SESSION['accessed_date'] = $accessed_date;
-
+    
+    $_SESSION['publish_date_day'] = $publish_date_day;
+    $_SESSION['publish_date_year'] = $publish_date_year;
+    $_SESSION['publish_date_month'] = $publish_date_month;
   ?>
 
 

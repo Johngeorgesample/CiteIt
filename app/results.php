@@ -32,7 +32,11 @@
   $publisher = $_SESSION['publisher'];
   //$_SESSION['siteName'] = $siteName; //TODO: make siteName variable
   $accessed_date = $_SESSION['accessed_date'];
- 
+
+  $publish_date_day = $_SESSION['publish_date_day'];
+  $publish_date_year = $_SESSION['publish_date_year']; 
+  $publish_date_month = $_SESSION['publish_date_month'];
+  $full_publish_date = $publish_date_day . " " . $publish_date_month . " " . $publish_date_year;
 
   if($_SESSION['author'] == null) {
     $author = $_POST["author"];
@@ -55,18 +59,18 @@
 ?>
 
 <?php
-  if($publish_date_needs_format == null) {
-    echo "n.d";
-  }
-
-  else {
+  if($publish_date_month == null && $_POST["datepickerDate"] != null) {
+    $publish_date_needs_format = $_POST["datepickerDate"];
     $publish_date_array = (explode("-", $publish_date_needs_format));
     $publish_date_day = $publish_date_array[1];
     $publish_date_year = $publish_date_array[2];
     $publish_date_month = $publish_date_array[0];
-
     $APA_date = $publish_date_year . ", " .  $publish_date_month . " " . $publish_date_day;
     $full_publish_date = $publish_date_day . " " . $publish_date_month . " " . $publish_date_year;
+  }
+
+  else {
+    echo "n.d";
   }
 ?>
 
