@@ -30,7 +30,7 @@
   $author_first_name_first_letter = $_SESSION['author_first_name_first_letter'];
   $articleTitle = $_SESSION['articleTitle'];
   $publisher = $_SESSION['publisher'];
-  //$_SESSION['siteName'] = $siteName; //TODO: make siteName variable
+  $websiteTitle = $_SESSION['websiteTitle'];
   $accessed_date = $_SESSION['accessed_date'];
 
   $publish_date_day = $_SESSION['publish_date_day'];
@@ -69,7 +69,7 @@
     $full_publish_date = $publish_date_day . " " . $publish_date_month . " " . $publish_date_year;
   }
 
-  else {
+  elseif ($publish_date_month == null && $_POST["datepickerDate"] == null){
     echo "n.d";
   }
 ?>
@@ -78,7 +78,7 @@
   <div class="final-citation">
     <?php
       if($citationStyle == 'MLA') {
-        echo $author_last_name . ", " . $author_first_name . ". \"" . $articleTitle . "\". " . "<i>" . $publisher . "</i>. " . $property_ogSite_name . ", " . $full_publish_date . ". " . "Web." . " " . $accessed_date;
+        echo $author_last_name . ", " . $author_first_name . ". \"" . $articleTitle . "\". " . "<i>" . $publisher . "</i>. " . $websiteTitle . ", " . $full_publish_date . ". " . "Web." . " " . $accessed_date;
       }
 
       elseif ($citationStyle == 'APA') {

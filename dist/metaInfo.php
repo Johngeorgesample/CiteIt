@@ -27,7 +27,7 @@
   $html->load_file($_POST["myUrl"]); 
   $citationStyle =  $_POST["citationStyle"];
 
-  echo $citationStyle;
+  // echo $citationStyle;
 
   $authorIsNull = true;
   $websiteTitleIsNull = true;
@@ -45,6 +45,7 @@
 
   //publisher
   $publisher = $property_ogSite_name;
+  $websiteTitle = $property_ogSite_name;
   if ($property_ogSite_name != null) {
     $publisherIsNull = false;
     $websiteTitleIsNull = false;
@@ -156,7 +157,7 @@
 
   <!-- TODO: stop displaying things that are null -->
   <p><b>url</b>: <?php echo $_POST["myUrl"] ?></p>
-  <p><b>website title</b>: <?php echo $property_ogSite_name?></p> <!--if null, use article title-->
+  <p><b>website title</b>: <?php echo $websiteTitle?></p> <!--if null, use article title-->
   <p><b>article title</b>: <?php echo $articleTitle?></p>
   <p><b>publisher</b>: <?php echo $publisher?></p> <!-- might be same as website_title -->
   <p><b>electronically published</b>: <?php echo $full_publish_date?></p>
@@ -170,10 +171,10 @@
     $_SESSION['author_first_name_first_letter'] = $author_first_name_first_letter;
     $_SESSION['articleTitle'] = $articleTitle;
     $_SESSION['publisher'] = $publisher;
-    $_SESSION['siteName'] = $siteName; //TODO: make siteName variable
+    $_SESSION['websiteTitle'] = $websiteTitle; //TODO: make siteName variable
     //$_SESSION['full_publish_date'] = $full_publish_date;
     $_SESSION['accessed_date'] = $accessed_date;
-    
+
     $_SESSION['publish_date_day'] = $publish_date_day;
     $_SESSION['publish_date_year'] = $publish_date_year;
     $_SESSION['publish_date_month'] = $publish_date_month;
