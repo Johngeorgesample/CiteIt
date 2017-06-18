@@ -115,6 +115,8 @@
 ?>
 
 <div class="container">
+  <h3>What we got</h3>
+
   <?php 
     if($name_author != null) {
       $authorIsNull = false;
@@ -152,8 +154,6 @@
     $author_first_name_first_letter = $author_first_name[0]; 
   ?>
 
-  <h3>What we got</h3>
-
   <p><b>url</b>: <?php echo $_POST["myUrl"] ?></p>
   <p><b>website title</b>: <?php echo $property_ogSite_name?></p> <!--if null, use article title-->
   <p><b>article title</b>: <?php echo $articleTitle?></p>
@@ -161,6 +161,8 @@
   <p><b>electronically published</b>: <?php echo $full_publish_date?></p>
   <p><b>Date Accessed</b>: <?php echo $accessed_date?> </p>
 
+
+  <form action="results.php" method="post">
   <?php
   if( $authorIsNull == true || $websiteTitleIsNull == true || $articleTitleIsNull == true || $publisherIsNull == true || $publishedDateIsNull == true) {
 
@@ -185,10 +187,11 @@
       echo '<form><input type=\"text\" placeholder="New York Times"></form>';
     }
     if($publishedDateIsNull == true) {
-      echo '<p><b>published Date: </b><input type="text" id="datepicker"></p>'; //TODO: style, fix date format to reuse explode method
+      echo '<p><b>published Date: </b><input type="text" id="datepicker" name="datepickerDate"></p>'; //TODO: style, fix date format to reuse explode method
     }
   ?>
-
+  <input type="submit" value="Cite">
+</form>
   <hr>
 
   <?php
@@ -202,18 +205,21 @@
   ?>
 
   <?php
+    $_SESSION['citationStyle'] = $citationStyle;
     $_SESSION['author'] = $author;
     $_SESSION['author_last_name'] = $author_last_name;
     $_SESSION['author_first_name'] = $author_first_name;
+    $_SESSION['author_first_name_first_letter'] = $author_first_name_first_letter;
     $_SESSION['articleTitle'] = $articleTitle;
     $_SESSION['publisher'] = $publisher;
     $_SESSION['siteName'] = $siteName; //TODO: make siteName variable
-    $_SESSION['full_publish_date'] = $full_publish_date;
+    //$_SESSION['full_publish_date'] = $full_publish_date;
     $_SESSION['accessed_date'] = $accessed_date;
 
   ?>
 
 <a href="results.php">this is a link</a>
+
 
 </div>
 
