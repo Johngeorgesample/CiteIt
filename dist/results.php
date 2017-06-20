@@ -65,13 +65,14 @@
     $publish_date_day = $publish_date_array[1];
     $publish_date_year = $publish_date_array[2];
     $publish_date_month = $publish_date_array[0];
-    $APA_date = $publish_date_year . ", " .  $publish_date_month . " " . $publish_date_day;
+    
     $full_publish_date = $publish_date_day . " " . $publish_date_month . " " . $publish_date_year;
   }
 
   elseif ($publish_date_month == null && $_POST["datepickerDate"] == null){
     $full_publish_date = "n.d";
   }
+  $APA_date = $publish_date_year . ", " .  $publish_date_month . " " . $publish_date_day;
 ?>
 
 <div class="container">
