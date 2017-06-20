@@ -31,6 +31,7 @@
   $articleTitle = $_SESSION['articleTitle'];
   $publisher = $_SESSION['publisher'];
   $websiteTitle = $_SESSION['websiteTitle'];
+  $URL = $_SESSION['URL'];
   $accessed_date = $_SESSION['accessed_date'];
 
   $publish_date_day = $_SESSION['publish_date_day'];
@@ -79,11 +80,54 @@
   <div class="final-citation">
     <?php
       if($citationStyle == 'MLA') {
+
+        // if($publish_date_month == 01) { //TODO: fix why this is half broken
+        //   $publish_date_month = "Jan";
+        // }
+        // elseif($publish_date_month == 02) {
+        //   $publish_date_month = "Feb";
+        // }
+        // elseif($publish_date_month == 03) {
+        //   $publish_date_month = "Mar";
+        // }
+        // elseif($publish_date_month == 04) {
+        //   $publish_date_month = "Apr";
+        // }
+        // elseif($publish_date_month == 05) {
+        //   $publish_date_month = "May";
+        // }
+        // elseif($publish_date_month == 06) {
+        //   $publish_date_month = "June";
+        // }
+        // elseif($publish_date_month == 07) {
+        //   $publish_date_month = "July";
+        // }
+        // elseif($publish_date_month == 08) {
+        //   $publish_date_month = "Aug";
+        // }
+        // elseif($publish_date_month == 09) {
+        //   $publish_date_month = "Sept";
+        // }
+        // elseif($publish_date_month == 10) {
+        //   $publish_date_month = "Oct";
+        // }
+        // elseif($publish_date_month == 11) {
+        //   $publish_date_month = "Nov";
+        // }
+        // elseif($publish_date_month == 12) {
+        //   $publish_date_month = "Dec";
+        // }
+
+
         echo $author_last_name . ", " . $author_first_name . ". \"" . $articleTitle . "\". " . "<i>" . $publisher . "</i>. " . $websiteTitle . ", " . $full_publish_date . ". " . "Web." . " " . $accessed_date;
       }
 
       elseif ($citationStyle == 'APA') {
-        echo $author_last_name . ", " . $author_first_name_first_letter . ". " . "(" . $APA_date . ") " . $articleTitle . ". " . "Retrieved " . $accessed_date . ", " . "from " . $_POST["myUrl"];
+        echo $author_last_name . ", " . $author_first_name_first_letter . ". " . "(" . $APA_date . ") " . $articleTitle . ". " . "Retrieved " . $accessed_date . ", " . "from " . $URL;
+      }
+
+      elseif($citationStyle == 'Chicago') {
+        echo $author_last_name . ", " . $author_first_name . ". \"" . $articleTitle . "\". " . "<i>" . $publisher . "</i>. " . " " . $full_publish_date . ". " . " " . $accessed_date . "<br>" . $URL;
       }
     ?>
   </div>

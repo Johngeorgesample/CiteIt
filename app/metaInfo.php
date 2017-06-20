@@ -27,6 +27,8 @@
   $html->load_file($_POST["myUrl"]); 
   $citationStyle =  $_POST["citationStyle"];
 
+  $URL = $_POST["myUrl"];
+
   // echo $citationStyle;
 
   $authorIsNull = true;
@@ -172,7 +174,7 @@
     $_SESSION['articleTitle'] = $articleTitle;
     $_SESSION['publisher'] = $publisher;
     $_SESSION['websiteTitle'] = $websiteTitle; //TODO: make siteName variable
-    //$_SESSION['full_publish_date'] = $full_publish_date;
+    $_SESSION['URL'] = $URL;
     $_SESSION['accessed_date'] = $accessed_date;
 
     $_SESSION['publish_date_day'] = $publish_date_day;
