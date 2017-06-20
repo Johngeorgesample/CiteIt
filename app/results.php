@@ -70,7 +70,7 @@
   }
 
   elseif ($publish_date_month == null && $_POST["datepickerDate"] == null){
-    echo "n.d";
+    $full_publish_date = "n.d";
   }
 ?>
 
