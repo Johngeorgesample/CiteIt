@@ -1,6 +1,4 @@
-<?php
-  session_start();
-?>
+<?php session_start(); ?>
 <html>
 <head>
   <meta charset="UTF-8">
@@ -56,7 +54,6 @@
   if($_SESSION['publisher'] == null) {
     $publisher = $_POST["publisher"];
   }
-
 ?>
 
 <?php
@@ -73,11 +70,12 @@
   elseif ($publish_date_month == null && $_POST["datepickerDate"] == null){
     $full_publish_date = "n.d";
   }
+
   $APA_date = $publish_date_year . ", " .  $publish_date_month . " " . $publish_date_day;
 ?>
 
 <div class="container">
-  <div class="final-citation">
+  <div class="final-citation"> <!--TODO: save all citation in memory, allow user to download PDF (alphabetized)-->
     <?php
       if($citationStyle == 'MLA') {
 
