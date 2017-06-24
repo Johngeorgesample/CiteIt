@@ -26,10 +26,7 @@
   $html = new simple_html_dom();
   $html->load_file($_POST["myUrl"]); 
   $citationStyle =  $_POST["citationStyle"];
-
   $URL = $_POST["myUrl"];
-
-  // echo $citationStyle;
 
   $authorIsNull = true;
   $websiteTitleIsNull = true;
@@ -107,13 +104,6 @@
   $publish_date_year = $publish_date_array[0];
   $publish_date_month = $publish_date_array[1];
 
-  if($publish_date_month == 05) { //ghetto way to do months. Will be dependent on citation style
-    $publish_date_month = "May";
-  }
-  elseif($publish_date_month == 06) {
-    $publish_date_month = "June";
-  }
-
   $full_publish_date = $publish_date_day . " " . $publish_date_month . " " . $publish_date_year;
 ?>
 
@@ -189,11 +179,9 @@
 
         echo "<hr>";
         echo "<h3>What we still need:</h3>";
-
     }
       if($authorIsNull == true) {
         echo '<p><b>author: </b> <input type="text" placeholder="Mark Twain" name="author"></p>';
-
       }
       if($websiteTitleIsNull == true) {
         echo '<p><b>website title: </b> <input type="text" placeholder="New York Times" name="websiteTitle"></p>';
@@ -205,7 +193,7 @@
         echo '<p><b>publisher: </b> <input type="text" placeholder="New York Times" name="publisher"></p>';
       }
       if($publishedDateIsNull == true) {
-        echo '<p><b>published Date: </b><input type="text" id="datepicker" placeholder="click to select date" name="datepickerDate"></p>'; //TODO: style, fix date format to reuse explode method
+        echo '<p><b>published Date: </b><input type="text" id="datepicker" placeholder="click to select date" name="datepickerDate"></p>';
       }
     ?>
   <input type="submit" value="Cite">
