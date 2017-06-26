@@ -1,6 +1,4 @@
-<?php
-  session_start();
-?>
+<?php session_start(); ?>
 <html>
 <head>
   <meta charset="UTF-8">
@@ -68,10 +66,6 @@
   $property_articleAuthor = $html->find("meta[property='article:author']", 0)->content; //TODO: fix this, it's not working
   $name_sailthru_author = $html->find("meta[name='sailthru.author']", 0)->content;
 
- 
-?>
-
-<?php 
   if($property_ogTitle != null) {
     $articleTitleIsNull = false;
     $articleTitle = $property_ogTitle;
@@ -178,7 +172,7 @@
     if( $authorIsNull == true || $websiteTitleIsNull == true || $articleTitleIsNull == true || $publisherIsNull == true || $publishedDateIsNull == true) {
 
         echo "<hr>";
-        echo "<h3>What we still need:</h3>";
+        echo "<h3>What we still need:</h3>"; //only display if value is missing
     }
       if($authorIsNull == true) {
         echo '<p><b>author: </b> <input type="text" placeholder="Mark Twain" name="author"></p>';
