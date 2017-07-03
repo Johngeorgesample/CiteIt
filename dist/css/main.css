@@ -500,3 +500,9 @@ a:visited {
   line-height: 21px;
   word-wrap: break-word;
   text-indent: -2em; }
+
+.finalCitationBox {
+  background-color: #ebebeb;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-bottom: 10px; }
