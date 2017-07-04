@@ -108,27 +108,27 @@
     if($name_author != null) {
       $authorIsNull = false;
       $author = $name_author;
-      echo "<p><b>author</b>: " . $name_author . "</p>";
+      echo "<p><b>author</b>:<span id='author'>" . $name_author . "</span></p>";
     }
     elseif ($name_Author != null) {
       $authorIsNull = false;
       $author = $name_Author;
-      echo "<p><b>author</b>: " . $name_Author . "</p>";
+      echo "<p><b>author</b>:<span id='author'>" . $name_Author . "</span></p>";
     }
     elseif ($property_author != null) {
       $authorIsNull = false;
       $author = $property_author;
-      echo "<p><b>author</b>: " . $property_author . "</p>";
+      echo "<p><b>author</b>: <span id='author'>" . $property_author . "</span></p>";
     }
     elseif ($property_articleAuthor != null) {
       $authorIsNull = false;
       $author = $property_articleAuthor;
-      echo "<p><b>author</b>: " . $property_articleAuthor . "</p>";
+      echo "<p><b>author</b>:<span id='author'>" . $property_articleAuthor . "</span></p>";
     }
     elseif ($name_sailthru_author != null) {
       $authorIsNull = false;
       $author = $name_sailthru_author;
-      echo "<p><b>author</b>: " . $name_sailthru_author . "</p>";
+      echo "<p><b>author</b>:<span id='author'>" . $name_sailthru_author . "</span></p>";
     }
   ?>
 
