@@ -54,6 +54,10 @@
   if($_SESSION['publisher'] == null) {
     $publisher = $_POST["publisher"];
   }
+
+  if($_SESSION['websiteTitle'] == null) {
+    $websiteTitle = $_POST["websiteTitle"];
+  }
 ?>
 
 <?php
