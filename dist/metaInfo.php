@@ -107,12 +107,12 @@
     if($name_author != null) {
       $authorIsNull = false;
       $author = $name_author;
-      echo "<p><b>author</b>:<span id='author'>" . $name_author . "</span></p>";
+      echo "<p><b>author</b>: <span id='author'>" . $name_author . "</span></p>";
     }
     elseif ($name_Author != null) {
       $authorIsNull = false;
       $author = $name_Author;
-      echo "<p><b>author</b>:<span id='author'>" . $name_Author . "</span></p>";
+      echo "<p><b>author</b>: <span id='author'>" . $name_Author . "</span></p>";
     }
     elseif ($property_author != null) {
       $authorIsNull = false;
@@ -122,12 +122,12 @@
     elseif ($property_articleAuthor != null) {
       $authorIsNull = false;
       $author = $property_articleAuthor;
-      echo "<p><b>author</b>:<span id='author'>" . $property_articleAuthor . "</span></p>";
+      echo "<p><b>author</b>: <span id='author'>" . $property_articleAuthor . "</span></p>";
     }
     elseif ($name_sailthru_author != null) {
       $authorIsNull = false;
       $author = $name_sailthru_author;
-      echo "<p><b>author</b>:<span id='author'>" . $name_sailthru_author . "</span></p>";
+      echo "<p><b>author</b>: <span id='author'>" . $name_sailthru_author . "</span></p>";
     }
   ?>
 
@@ -140,13 +140,13 @@
     $author_first_name_first_letter = $author_first_name[0]; 
   ?>
 
-  <!-- TODO: stop displaying things that are null -->
   <p><b>url</b>: <span id="URL"> <?php echo $_POST["myUrl"] ?></span></p>
-  <p><b>website title</b>: <span id="websiteTitle"> <?php echo $websiteTitle?></span></p> <!--if null, use article title-->
-  <p><b>article title</b>: <span id="articleTitle"> <?php echo $articleTitle?></span></p>
-  <p><b>publisher</b>: <span id="publisher"> <?php echo $publisher?></span></p> <!-- might be same as website_title -->
-  <p><b>electronically published</b>: <span id="full_publish_date"> <?php echo $full_publish_date?></span></p>
-  <p><b>Date Accessed</b>: <span id="accessed_date"> <?php echo $accessed_date?></span></p>
+  <?php if($websiteTitle != null) {echo "<p><b>website title</b>: <span id='websiteTitle'>" . $websiteTitle . "</span></p>";} ?>
+  <?php if($articleTitle != null) {echo "<p><b>article title</b>: <span id='articleTitle'>" . $articleTitle . "</span></p>";} ?>
+  <?php if($publisher != null) {echo "<p><b>publisher</b>: <span id='publisher'>" . $publisher . "</span></p>";} ?>
+  <?php if($publishedTime != null) {echo "<p><b>electronically published</b>: <span id='full_publish_date'>" . $full_publish_date . "</span></p>";} ?>
+  <?php if($accessed_date != null) {echo "<p><b>Date Accessed</b>: <span id='accessed_date'>" . $accessed_date . "</span></p>";} ?>
+ 
 
   <?php
     $_SESSION['citationStyle'] = $citationStyle;
