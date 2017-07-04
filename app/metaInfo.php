@@ -31,7 +31,6 @@
   $articleTitleIsNull = true;
   $publisherIsNull = true;
   $publishedDateIsNull = true;
-  //$accessedDateIsNull = true;
 
   //website title
   $property_ogSite_name = $html->find("meta[property='og:site_name']", 0)->content;
