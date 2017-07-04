@@ -142,12 +142,12 @@
   ?>
 
   <!-- TODO: stop displaying things that are null -->
-  <p><b>url</b>: <?php echo $_POST["myUrl"] ?></p>
-  <p><b>website title</b>: <?php echo $websiteTitle?></p> <!--if null, use article title-->
-  <p><b>article title</b>: <?php echo $articleTitle?></p>
-  <p><b>publisher</b>: <?php echo $publisher?></p> <!-- might be same as website_title -->
-  <p><b>electronically published</b>: <?php echo $full_publish_date?></p>
-  <p><b>Date Accessed</b>: <?php echo $accessed_date?> </p>
+  <p><b>url</b>: <span id="URL"> <?php echo $_POST["myUrl"] ?></span></p>
+  <p><b>website title</b>: <span id="websiteTitle"> <?php echo $websiteTitle?></span></p> <!--if null, use article title-->
+  <p><b>article title</b>: <span id="articleTitle"> <?php echo $articleTitle?></span></p>
+  <p><b>publisher</b>: <span id="publisher"> <?php echo $publisher?></span></p> <!-- might be same as website_title -->
+  <p><b>electronically published</b>: <span id="full_publish_date"> <?php echo $full_publish_date?></span></p>
+  <p><b>Date Accessed</b>: <span id="accessed_date"> <?php echo $accessed_date?></span></p>
 
   <?php
     $_SESSION['citationStyle'] = $citationStyle;
