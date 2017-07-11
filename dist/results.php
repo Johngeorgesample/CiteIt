@@ -77,7 +77,7 @@
     <?php
       if($citationStyle == 'MLA') {
 
-        echo "<span class='finalCitationBox'>" . $author_last_name . ", " . $author_first_name . ". \"" . $articleTitle . "\". " . "<i>" . $publisher . "</i>. " . $websiteTitle . ", " . $full_publish_date . ". " . "Web." . " " . $accessed_date . "</span>";
+        echo "<span id='finalCitationBox'>" . $author_last_name . ", " . $author_first_name . ". \"" . $articleTitle . "\". " . "<i>" . $publisher . "</i>. " . $websiteTitle . ", " . $full_publish_date . ". " . "Web." . " " . $accessed_date . "</span>";
       }
 
       elseif ($citationStyle == 'APA') {
@@ -88,5 +88,19 @@
         echo "<span class='finalCitationBox'>" . $author_last_name . ", " . $author_first_name . ". \"" . $articleTitle . "\". " . "<i>" . $publisher . "</i>. " . " " . $full_publish_date . ". " . " " . $accessed_date . "<br>" . $URL . "</span>";
       }
     ?>
+     <h1 style="color:black" onclick="populateStorage()">click</h1>
+     <input type="text" id="lname"><br>
   </div>
  </div>
+
+
+
+ <script>
+
+  function populateStorage() {
+    localStorage.setItem('citation', document.getElementById('finalCitationBox').innerHTML);
+    for (var key in localStorage) {
+  console.log(key + ':' + localStorage[key]);
+}
+  }
+ </script>
