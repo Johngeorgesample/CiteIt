@@ -471,7 +471,8 @@ a:visited {
   list-style-type: none;
   margin: 0;
   padding: 0;
-  overflow: hidden; }
+  overflow: hidden;
+  margin-bottom: 20px; }
 
 .container {
   padding-left: 20px; }

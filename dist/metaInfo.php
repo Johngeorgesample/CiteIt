@@ -12,13 +12,6 @@
   <div class="titleBar">
     <h1><a href="http://localhost:8888/">CiteIt!</a></h1>
   </div>
-  <nav>
-    <ul class="nav-ul">
-      <li class="nav-li" ng-click=""><a href="#">Web</a></li>
-      <li class="nav-li" ng-click=""><a href="#">Book</a></li>
-      <li class="nav-li" ng-click=""><a href="#">Tweet</a></li>
-    </ul>
-  </nav>
 
 <?php
   include('simple_html_dom.php');
