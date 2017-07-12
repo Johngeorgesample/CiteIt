@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>CiteIt!</title>
   <link rel="stylesheet" href="css/main.css" type="text/css">
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
   <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 </head>
 <body>
@@ -88,19 +89,28 @@
         echo "<span class='finalCitationBox'>" . $author_last_name . ", " . $author_first_name . ". \"" . $articleTitle . "\". " . "<i>" . $publisher . "</i>. " . " " . $full_publish_date . ". " . " " . $accessed_date . "<br>" . $URL . "</span>";
       }
     ?>
-     <h1 style="color:black" onclick="populateStorage()">click</h1>
-     <input type="text" id="lname"><br>
+    <!--  <h1 style="color:black" onclick="populateStorage()">click</h1> -->
+    <hr>
+    <h2>Older Citations</h2>
+     <div id="DivToPrintOut"></div>
   </div>
  </div>
 
 
 
  <script>
-
-  function populateStorage() {
-    localStorage.setItem('citation', document.getElementById('finalCitationBox').innerHTML);
+  localStorage.setItem('citation', document.getElementById('finalCitationBox').innerHTML);
     for (var key in localStorage) {
-  console.log(key + ':' + localStorage[key]);
-}
-  }
+      console.log(key + ':' + localStorage[key]);
+    }
  </script>
+
+ <script>
+  var output = ''; 
+
+  for (var key in localStorage) {
+    output = output+(localStorage[key])+'\n';
+  }
+
+  $('#DivToPrintOut').html(output);
+</script>
