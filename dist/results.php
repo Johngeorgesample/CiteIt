@@ -96,21 +96,28 @@
   </div>
  </div>
 
-
-
- <script>
-  localStorage.setItem('citation', document.getElementById('finalCitationBox').innerHTML);
-    for (var key in localStorage) {
-      console.log(key + ':' + localStorage[key]);
-    }
- </script>
+<h1 style="color: black" onclick="clearS()">click to clear storage</h1>
+	
 
  <script>
   var output = ''; 
+  localStorage.setItem(Math.random(), document.getElementById('finalCitationBox').innerHTML);
+
+    for (var key in localStorage) {
+    	if(localStorage[key] != document.getElementById('finalCitationBox').innerHTML) {
+        console.log(key + ':' + localStorage[key]); //for debugging
+      }
+    }
 
   for (var key in localStorage) {
-    output = output+(localStorage[key])+'\n';
+  	if(localStorage[key] != document.getElementById('finalCitationBox').innerHTML) {
+      output = output+(localStorage[key])+'<br><br>';
+    }
   }
 
   $('#DivToPrintOut').html(output);
+
+  function clearS() {
+  	localStorage.clear();
+  }
 </script>
