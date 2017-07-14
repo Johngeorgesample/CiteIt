@@ -101,7 +101,8 @@
 
  <script>
   var output = ''; 
-  localStorage.setItem(Date.now(), document.getElementById('finalCitationBox').innerHTML);
+  localStorage.setItem(document.getElementById('finalCitationBox').innerHTML, document.getElementById('finalCitationBox').innerHTML);
+
 
   for (var key in localStorage) {
   	if(localStorage[key] != document.getElementById('finalCitationBox').innerHTML) {
