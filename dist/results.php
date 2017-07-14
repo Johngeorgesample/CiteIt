@@ -112,7 +112,7 @@
 
   for (var key in localStorage) {
   	if(localStorage[key] != document.getElementById('finalCitationBox').innerHTML) {
-      output = output+(localStorage[key])+'<br><br>';
+      output+= '<p onclick="removeFromlocalStorage()">' + (localStorage[key])+'</p>';
     }
   }
 
@@ -120,5 +120,9 @@
 
   function clearS() {
   	localStorage.clear();
+  }
+  
+  function removeFromlocalStorage() {
+    localStorage.removeItem(localStorage[key]);
   }
 </script>

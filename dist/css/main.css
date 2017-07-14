@@ -477,6 +477,9 @@ a:visited {
 .container {
   padding-left: 20px; }
 
+.storedCitation:hover {
+  cursor: pointer; }
+
 .radio-toolbar {
   text-align: center; }
 
