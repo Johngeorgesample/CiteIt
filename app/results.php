@@ -82,11 +82,11 @@
       }
 
       elseif ($citationStyle == 'APA') {
-        echo "<span class='finalCitationBox'>" . $author_last_name . ", " . $author_first_name_first_letter . ". " . "(" . $APA_date . ") " . $articleTitle . ". " . "Retrieved " . $accessed_date . ", " . "from " . $URL . "</span>";
+        echo "<span id='finalCitationBox'>" . $author_last_name . ", " . $author_first_name_first_letter . ". " . "(" . $APA_date . ") " . $articleTitle . ". " . "Retrieved " . $accessed_date . ", " . "from " . $URL . "</span>";
       }
 
       elseif($citationStyle == 'Chicago') {
-        echo "<span class='finalCitationBox'>" . $author_last_name . ", " . $author_first_name . ". \"" . $articleTitle . "\". " . "<i>" . $publisher . "</i>. " . " " . $full_publish_date . ". " . " " . $accessed_date . "<br>" . $URL . "</span>";
+        echo "<span id='finalCitationBox'>" . $author_last_name . ", " . $author_first_name . ". \"" . $articleTitle . "\". " . "<i>" . $publisher . "</i>. " . " " . $full_publish_date . ". " . " " . $accessed_date . "<br>" . $URL . "</span>";
       }
     ?>
     <!--  <h1 style="color:black" onclick="populateStorage()">click</h1> -->
@@ -101,13 +101,13 @@
 
  <script>
   var output = ''; 
-  localStorage.setItem(Math.random(), document.getElementById('finalCitationBox').innerHTML);
+  localStorage.setItem(Date.now(), document.getElementById('finalCitationBox').innerHTML);
 
-    for (var key in localStorage) {
-    	if(localStorage[key] != document.getElementById('finalCitationBox').innerHTML) {
-        console.log(key + ':' + localStorage[key]); //for debugging
-      }
+  for (var key in localStorage) {
+  	if(localStorage[key] != document.getElementById('finalCitationBox').innerHTML) {
+      console.log(key + ':' + localStorage[key]); //for debugging
     }
+  }
 
   for (var key in localStorage) {
   	if(localStorage[key] != document.getElementById('finalCitationBox').innerHTML) {
