@@ -7,6 +7,8 @@
   <link rel="stylesheet" href="css/main.css" type="text/css">
   <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
   <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css"> 
+
 </head>
 <body>
   <div class="titleBar">
@@ -112,7 +114,7 @@
 
   for (var key in localStorage) {
   	if(localStorage[key] != document.getElementById('finalCitationBox').innerHTML) {
-      output+= '<p onclick="removeFromlocalStorage()">' + (localStorage[key])+'</p>';
+      output+= '<p onclick="removeFromlocalStorage();hideCitation()">' + (localStorage[key])+'<i class="fa fa-trash"></i></p>';
     }
   }
 
@@ -123,6 +125,11 @@
   }
   
   function removeFromlocalStorage() {
+    console.log("removing from localStorage");
     localStorage.removeItem(localStorage[key]);
+  }
+
+  function hideCitation() {
+    $( "p" ).remove();
   }
 </script>

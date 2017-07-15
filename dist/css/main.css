@@ -480,6 +480,9 @@ a:visited {
 .storedCitation:hover {
   cursor: pointer; }
 
+.fa-trash {
+  padding-left: 1%; }
+
 .radio-toolbar {
   text-align: center; }
 
