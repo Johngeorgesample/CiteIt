@@ -481,7 +481,8 @@ a:visited {
   cursor: pointer; }
 
 .fa-trash {
-  padding-left: 1%; }
+  padding-left: 1%;
+  font-size: 18px !important; }
 
 .radio-toolbar {
   text-align: center; }
