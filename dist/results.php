@@ -4,7 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>CiteIt!</title>
+
   <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.4/jspdf.debug.js"></script>
+  <script src="js/script.js"></script>
+
   <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
   <link rel="stylesheet" href="css/main.css" type="text/css">
@@ -99,6 +103,7 @@
  </div>
 
 <h1 style="color: black" onclick="clearS()">click to clear storage</h1>
+<h1 style="color: black" onclick="generatePDF()">click to generatePDF</h1>
 	
 
  <script>
