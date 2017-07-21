@@ -110,15 +110,17 @@
   localStorage.setItem(document.getElementById('finalCitationBox').innerHTML, document.getElementById('finalCitationBox').innerHTML);
 
 
-  for (var key in localStorage) {
-  	if(localStorage[key] != document.getElementById('finalCitationBox').innerHTML) {
-      console.log(key + ':' + localStorage[key]); //for debugging
-    }
+  for (var i in localStorage) {
+  	//if(localStorage[i] != document.getElementById('finalCitationBox').innerHTML) {
+      console.log(localStorage[i]); //for debugging
+    //}
   }
 
-  for (var key in localStorage) {
-  	if(localStorage[key] != document.getElementById('finalCitationBox').innerHTML) {
-      output+= '<p onclick="removeFromlocalStorage();hideCitation()">' + (localStorage[key])+'<i class="fa fa-trash"></i></p>';
+  var j = 0;
+  for (var i in localStorage) { //don't add newly created citation to "older citations"
+  	if(localStorage[i] != document.getElementById('finalCitationBox').innerHTML) {
+      output+= '<p onclick="removeFromlocalStorage(this.id);hideCitation()" id="'+j+'">' + (localStorage[i])+'</p>';
+      j++;
     }
   }
 
@@ -128,12 +130,16 @@
   	localStorage.clear();
   }
   
-  function removeFromlocalStorage() {
-    console.log("removing from localStorage");
-    localStorage.removeItem(localStorage[key]);
+  function removeFromlocalStorage(citation) {
+    for (var i in localStorage) {
+      if(localStorage[i] === document.getElementById(citation).innerHTML) {
+        console.log("removing " + localStorage[i]);
+        localStorage.removeItem(document.getElementById(citation).innerHTML);
+      }
+    }
   }
 
   function hideCitation() {
-    $( "p" ).remove();
+    //$( "p" ).remove();
   }
 </script>
