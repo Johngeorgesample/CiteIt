@@ -119,7 +119,7 @@
   var j = 0;
   for (var i in localStorage) { //don't add newly created citation to "older citations"
   	if(localStorage[i] != document.getElementById('finalCitationBox').innerHTML) {
-      output+= '<p onclick="removeFromlocalStorage(this.id);hideCitation()" id="'+j+'">' + (localStorage[i])+'</p>';
+      output+= '<p onclick="removeFromlocalStorage(this.id);hideCitation(this.id)" id="'+j+'">' + (localStorage[i])+'</p>';
       j++;
     }
   }
@@ -127,6 +127,7 @@
   $('#DivToPrintOut').html(output);
 
   function clearS() {
+    console.log("localStorage cleared");
   	localStorage.clear();
   }
   
@@ -139,7 +140,7 @@
     }
   }
 
-  function hideCitation() {
-    //$( "p" ).remove();
+  function hideCitation(citation) {
+    $( "#" + citation ).remove();
   }
 </script>
