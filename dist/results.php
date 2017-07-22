@@ -14,8 +14,6 @@
     <h1><a href="http://localhost:8888/">CiteIt!</a></h1>
   </div>
   
-
-
 <?php
   $citationStyle = $_SESSION['citationStyle'];
   $author = $_SESSION['author'];
@@ -123,6 +121,46 @@
       }
 
       elseif ($citationStyle == 'APA') {
+        switch ($publish_date_month) {
+            case "01":
+                $publish_date_month = "Jan.";
+                break;
+            case "02":
+                $publish_date_month = "Feb.";
+                break;
+            case "03":
+                $publish_date_month = "Mar.";
+                break;
+            case "04":
+                $publish_date_month = "Apr.";
+                break;
+            case "05":
+                $publish_date_month = "May";
+                break;
+            case "06":
+                $publish_date_month = "June";
+                break;
+            case "07":
+                $publish_date_month = "July";
+                break;
+            case "08":
+                $publish_date_month = "Aug.";
+                break;
+            case "09":
+                $publish_date_month = "Sept.";
+                break;
+            case "10":
+                $publish_date_month = "Oct.";
+                break;
+            case "11":
+                $publish_date_month = "Nov.";
+                break;
+            case "12":
+                $publish_date_month = "Dec.";
+                break;
+        }
+        $APA_date = $publish_date_day . " " . $publish_date_month . " " . $publish_date_year;
+
         echo "<span id='finalCitationBox'>" . $author_last_name . ", " . $author_first_name_first_letter . ". " . "(" . $APA_date . ") " . $articleTitle . ". " . "Retrieved " . $accessed_date . ", " . "from " . $URL . "</span>";
       }
 
