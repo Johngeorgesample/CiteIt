@@ -117,7 +117,7 @@
 
         $full_publish_date = $publish_date_day . " " . $publish_date_month . " " . $publish_date_year;
 
-        echo "<span id='finalCitationBox'>" . $author_last_name . ", " . $author_first_name . ". \"" . $articleTitle . "\". " . "<i>" . $publisher . "</i>. " . $websiteTitle . ", " . $full_publish_date . ". " . "Web." . " " . $accessed_date . ".</span>";
+        echo "<p id='finalCitationBox'>" . $author_last_name . ", " . $author_first_name . ". \"" . $articleTitle . "\". " . "<i>" . $publisher . "</i>. " . $websiteTitle . ", " . $full_publish_date . ". " . "Web." . " " . $accessed_date . ".</p>";
       }
 
       elseif ($citationStyle == 'APA') {
@@ -161,7 +161,7 @@
         }
         $APA_date = $publish_date_day . " " . $publish_date_month . " " . $publish_date_year;
 
-        echo "<span id='finalCitationBox'>" . $author_last_name . ", " . $author_first_name_first_letter . ". " . "(" . $APA_date . ") " . $articleTitle . ". " . "Retrieved " . $accessed_date . ", " . "from " . $URL . "</span>";
+        echo "<p id='finalCitationBox'>" . $author_last_name . ", " . $author_first_name_first_letter . ". " . "(" . $APA_date . ") " . $articleTitle . ". " . "Retrieved " . $accessed_date . ", " . "from " . $URL . "</p>";
       }
 
       elseif($citationStyle == 'Chicago') {
@@ -204,7 +204,7 @@
                 break;
         }
         $full_publish_date = $publish_date_day . " " . $publish_date_month . " " . $publish_date_year;
-        echo "<span id='finalCitationBox'>" . $author_last_name . ", " . $author_first_name . ". \"" . $articleTitle . "\". " . "<i>" . $publisher . "</i>. " . " " . $full_publish_date . ". " . " " . $accessed_date . "<br>" . $URL . "</span>";
+        echo "<p id='finalCitationBox'>" . $author_last_name . ", " . $author_first_name . ". \"" . $articleTitle . "\". " . "<i>" . $publisher . "</i>. " . " " . $full_publish_date . ". " . " " . $accessed_date . "<br>" . $URL . "</p>";
       }
     ?>
     <!--  <h1 style="color:black" onclick="populateStorage()">click</h1> -->
