@@ -75,11 +75,51 @@
 ?>
 
 <div class="container">
-  <div class="final-citation"> <!--TODO: save all citation in memory, allow user to download PDF (alphabetized)-->
+  <div class="final-citation">
     <?php
       if($citationStyle == 'MLA') {
+        switch ($publish_date_month) {
+            case "01":
+                $publish_date_month = "Jan.";
+                break;
+            case "02":
+                $publish_date_month = "Feb.";
+                break;
+            case "03":
+                $publish_date_month = "Mar.";
+                break;
+            case "04":
+                $publish_date_month = "Apr.";
+                break;
+            case "05":
+                $publish_date_month = "May";
+                break;
+            case "06":
+                $publish_date_month = "June";
+                break;
+            case "07":
+                $publish_date_month = "July";
+                break;
+            case "08":
+                $publish_date_month = "Aug.";
+                break;
+            case "09":
+                $publish_date_month = "Sept.";
+                break;
+            case "10":
+                $publish_date_month = "Oct.";
+                break;
+            case "11":
+                $publish_date_month = "Nov.";
+                break;
+            case "12":
+                $publish_date_month = "Dec.";
+                break;
+        }
 
-        echo "<span id='finalCitationBox'>" . $author_last_name . ", " . $author_first_name . ". \"" . $articleTitle . "\". " . "<i>" . $publisher . "</i>. " . $websiteTitle . ", " . $full_publish_date . ". " . "Web." . " " . $accessed_date . "</span>";
+        $full_publish_date = $publish_date_day . " " . $publish_date_month . " " . $publish_date_year;
+
+        echo "<span id='finalCitationBox'>" . $author_last_name . ", " . $author_first_name . ". \"" . $articleTitle . "\". " . "<i>" . $publisher . "</i>. " . $websiteTitle . ", " . $full_publish_date . ". " . "Web." . " " . $accessed_date . ".</span>";
       }
 
       elseif ($citationStyle == 'APA') {
@@ -87,6 +127,45 @@
       }
 
       elseif($citationStyle == 'Chicago') {
+        switch ($publish_date_month) {
+            case "01":
+                $publish_date_month = "Jan.";
+                break;
+            case "02":
+                $publish_date_month = "Feb.";
+                break;
+            case "03":
+                $publish_date_month = "Mar.";
+                break;
+            case "04":
+                $publish_date_month = "Apr.";
+                break;
+            case "05":
+                $publish_date_month = "May";
+                break;
+            case "06":
+                $publish_date_month = "June";
+                break;
+            case "07":
+                $publish_date_month = "July";
+                break;
+            case "08":
+                $publish_date_month = "Aug.";
+                break;
+            case "09":
+                $publish_date_month = "Sept.";
+                break;
+            case "10":
+                $publish_date_month = "Oct.";
+                break;
+            case "11":
+                $publish_date_month = "Nov.";
+                break;
+            case "12":
+                $publish_date_month = "Dec.";
+                break;
+        }
+        $full_publish_date = $publish_date_day . " " . $publish_date_month . " " . $publish_date_year;
         echo "<span id='finalCitationBox'>" . $author_last_name . ", " . $author_first_name . ". \"" . $articleTitle . "\". " . "<i>" . $publisher . "</i>. " . " " . $full_publish_date . ". " . " " . $accessed_date . "<br>" . $URL . "</span>";
       }
     ?>
@@ -103,4 +182,4 @@
 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.4/jspdf.debug.js"></script>
 <script src="js/script.js"></script>
-	
+

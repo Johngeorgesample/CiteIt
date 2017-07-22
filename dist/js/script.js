@@ -1,3 +1,4 @@
+var pageYCord = 10;
 function generatePDF() {
   var doc = new jsPDF();
   doc.setFont('times');

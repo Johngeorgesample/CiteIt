@@ -477,7 +477,7 @@ a:visited {
 .container {
   padding-left: 20px; }
 
-.storedCitation:hover {
+#DivToPrintOut p {
   cursor: pointer; }
 
 .fa-trash {

@@ -91,7 +91,7 @@
   $publish_date_year = $publish_date_array[0];
   $publish_date_month = $publish_date_array[1];
 
-  $full_publish_date = $publish_date_day . " " . $publish_date_month . " " . $publish_date_year;
+  $full_publish_date = $publish_date_month . " " . $publish_date_day . " " . $publish_date_year;
 ?>
 
 <div class="container">
