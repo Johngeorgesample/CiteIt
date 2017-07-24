@@ -216,8 +216,13 @@
 
 <h1 style="color: black" onclick="clearS()">click to clear storage</h1>
 <h1 style="color: black" onclick="generatePDF()">click to generatePDF</h1>
+<h1 style="color: black" onclick="generateBetterPDF()">click to generateBetterPDF</h1>
+
 
 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.4/jspdf.debug.js"></script>
 <script src="js/script.js"></script>
+<script src="js/pdfmake.min.js"></script>
+<script src="js/vfs_fonts.js"></script>
+
 
