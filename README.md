@@ -7,3 +7,4 @@ Web app that allows for easy creation of citations using popular citation styles
 * Fix citations for authors whose names don't follow 'First Last' style
 * Redesign UI
 * Add "undo" when removing old citations
+* Order old citaitons by time instead of lexicographically
