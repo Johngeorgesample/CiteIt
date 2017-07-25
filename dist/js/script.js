@@ -13,8 +13,11 @@ function generatePDF() {
 
 function generateBetterPDF() {
   var docDefinition = {
-                         content: 'This is an sample PDF printed with pdfMake' 
-                      };
+     content: [
+       { text: 'This paragraph will have a bigger font', fontSize: 12, margin: [ 1, 1, 1, 1 ] },
+     ]
+    };
+
   pdfMake.createPdf(docDefinition).download('optionalName.pdf');
 }
 
