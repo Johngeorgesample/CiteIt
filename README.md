@@ -1,5 +1,5 @@
 # CiteIt
-Web app that allows for easy creation of citations using popular citation styles including MLA, APA, and Chicago. 
+Web app that allows for easy creation of citations using popular citation styles including MLA, APA, and Chicago. This is accomplished by scraping meta tags of provided URLs using [PHP Simple HTML DOM Parser](http://simplehtmldom.sourceforge.net/).
 
 ### TODO:
 * Use pdfmake instead of jsPDF
