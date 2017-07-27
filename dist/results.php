@@ -52,9 +52,7 @@
   if($_SESSION['websiteTitle'] == null) {
     $websiteTitle = $_POST["websiteTitle"];
   }
-?>
 
-<?php
   if($publish_date_month == null && $_POST["datepickerDate"] != null) {
     $publish_date_needs_format = $_POST["datepickerDate"];
     $publish_date_array = (explode("-", $publish_date_needs_format));
@@ -65,7 +63,7 @@
     $full_publish_date = $publish_date_day . " " . $publish_date_month . " " . $publish_date_year;
   }
 
-  elseif ($publish_date_month == null && $_POST["datepickerDate"] == null){
+  elseif ($publish_date_month == null && $_POST["datepickerDate"] == null) {
     $full_publish_date = "n.d";
   }
 
@@ -225,4 +223,5 @@
 <script src="js/pdfmake.min.js"></script>
 <script src="js/vfs_fonts.js"></script>
 
-
+</body>
+</html>
