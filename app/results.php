@@ -157,9 +157,9 @@
                 $publish_date_month = "Dec.";
                 break;
         }
-        $APA_date = $publish_date_day . " " . $publish_date_month . " " . $publish_date_year;
+        $APA_date = $publish_date_year . ", " . $publish_date_month . " " . $publish_date_day;
 
-        echo "<p id='finalCitationBox'>" . $author_last_name . ", " . $author_first_name_first_letter . ". " . "(" . $APA_date . ") " . $articleTitle . ". " . "Retrieved " . $accessed_date . ", " . "from " . $URL . "</p>";
+        echo "<p id='finalCitationBox'>" . $author_last_name . ", " . $author_first_name_first_letter . ". " . "(" . $APA_date . "). " . $articleTitle . ". " . "Retrieved " . $accessed_date . ", " . "from " . $URL . "</p>";
       }
 
       elseif($citationStyle == 'Chicago') {
@@ -201,7 +201,7 @@
                 $publish_date_month = "Dec.";
                 break;
         }
-        $full_publish_date = $publish_date_day . " " . $publish_date_month . " " . $publish_date_year;
+        $full_publish_date = $publish_date_month . " " . $publish_date_day . " " . $publish_date_year;
         echo "<p id='finalCitationBox'>" . $author_last_name . ", " . $author_first_name . ". \"" . $articleTitle . "\". " . "<i>" . $publisher . "</i>. " . " " . $full_publish_date . ". " . " " . $accessed_date . "<br>" . $URL . "</p>";
       }
     ?>
