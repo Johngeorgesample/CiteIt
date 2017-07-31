@@ -9,3 +9,4 @@ Web app that allows for easy creation of citations using popular citation styles
 * Add "undo" when removing old citations
 * Order old citaitons by time instead of lexicographically
 * Switch date and month for accessed date for Chicago and APA
+* Allow old citations to be edited
