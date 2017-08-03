@@ -402,11 +402,6 @@ template {
 [hidden] {
   display: none; }
 
-h1 {
-  font-size: 42px;
-  text-align: center;
-  color: #fff; }
-
 a {
   text-decoration: none;
   color: #fff; }
@@ -470,8 +465,19 @@ a:visited {
   padding-bottom: 10px; }
 
 #squareOne {
-  background-color: papayawhip;
+  background-color: #fff6e8;
   height: 100vh; }
+
+.title {
+  font-family: 'Zilla Slab', serif;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: absolute;
+  height: 25vh;
+  font-size: 78px;
+  width: 100%; }
 
 input[type=submit] {
   background-color: #0288d1;

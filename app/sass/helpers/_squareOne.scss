@@ -1,6 +1,18 @@
 #squareOne {
-	background-color: papayawhip;
+	background-color: #fff6e8;
 	height: 100vh;
+}
+
+.title {
+	font-family: 'Zilla Slab', serif;
+	text-align: center;
+	display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: absolute;
+  height: 25vh;
+  font-size: 78px;
+  width: 100%
 }
 
 input[type=submit] {
@@ -26,7 +38,7 @@ input[type=submit]:hover {
 	text-align: center;
 	display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: center
 }
 
 .myBox {
