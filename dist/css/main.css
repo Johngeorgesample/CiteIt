@@ -402,31 +402,6 @@ template {
 [hidden] {
   display: none; }
 
-input[type=submit] {
-  background-color: #0288d1;
-  border: none;
-  color: white;
-  padding: 14px 32px;
-  text-decoration: none;
-  margin: 4px 2px;
-  cursor: pointer;
-  border-radius: 4px; }
-
-input[type=submit]:hover {
-  background-color: #017abc; }
-
-.searchBox {
-  margin: auto;
-  width: 50%;
-  padding: 10px;
-  text-align: center; }
-
-.myBox {
-  width: 50%;
-  padding: 12px 20px;
-  margin: 8px 0;
-  box-sizing: border-box; }
-
 h1 {
   font-size: 42px;
   text-align: center;
@@ -493,3 +468,39 @@ a:visited {
   padding-left: 10px;
   padding-right: 10px;
   padding-bottom: 10px; }
+
+#squareOne {
+  background-color: papayawhip;
+  height: 100vh; }
+
+input[type=submit] {
+  background-color: #0288d1;
+  border: none;
+  color: white;
+  padding: 14px 32px;
+  text-decoration: none;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 4px; }
+
+input[type=submit]:hover {
+  background-color: #017abc; }
+
+.searchBox {
+  height: 100vh;
+  margin: auto;
+  width: 50%;
+  padding: 10px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; }
+
+.myBox {
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box; }
+
+#squareTwo {
+  background-color: blue;
+  height: 100vh; }
