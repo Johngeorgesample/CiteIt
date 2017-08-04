@@ -16,8 +16,8 @@
   <body>
     <div id="squareOne">
       <h1 class="title">Cite It</h1>
-     <form>
-      <div class="searchBox">
+      <form action="metaInfo.php" method="post">
+        <div class="searchBox">
           <input type="text" class="myBox" name="myUrl" placeholder="enter url to cite">
           <input type="submit" value="Cite">
         </div>
@@ -33,7 +33,7 @@
     </div>
 
 
-    <form action="metaInfo.php" method="post">
+    <!-- <form action="metaInfo.php" method="post">
       <div class="radio-toolbar">
         <input type="radio" id="radio1" name="citationStyle" value="MLA" checked>
         <label for="radio1">MLA</label>
@@ -43,10 +43,8 @@
 
         <input type="radio" id="radio3" name="citationStyle" value="Chicago">
         <label for="radio3">Chicago</label>
-      </div>
-
-        
-    </form>
+      </div> 
+    </form> -->
   
   <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
   <script>
