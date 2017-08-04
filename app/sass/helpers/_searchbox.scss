@@ -5,31 +5,3 @@
 // 	box-sizing: border-box;
 // }
 
-input[type=submit] {
-	background-color: $brand;
-  border: none;
-  color: white;
-  padding: 14px 32px;
-  text-decoration: none;
-  margin: 4px 2px;
-  cursor: pointer;
-  border-radius: 4px;
-}
-
-input[type=submit]:hover {
-	background-color: $brandHover;
-}
-
-.searchBox {
-	margin: auto;
-	width: 50%;
-	padding: 10px;
-	text-align: center;
-}
-
-.myBox {
-	width: 50%;
-	padding: 12px 20px;
-	margin: 8px 0;
-	box-sizing: border-box;
-}

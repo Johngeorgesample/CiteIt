@@ -1,0 +1,49 @@
+#squareOne {
+	background-color: #fff6e8;
+	height: 100vh;
+}
+
+.title {
+	font-family: 'Zilla Slab', serif;
+	text-align: center;
+	display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: absolute;
+  height: 25vh;
+  font-size: 78px;
+  width: 100%
+}
+
+input[type=submit] {
+	background-color: $brand;
+  border: none;
+  color: white;
+  padding: 14px 32px;
+  text-decoration: none;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+input[type=submit]:hover {
+	background-color: $brandHover;
+}
+
+.searchBox {
+	height: 100vh;
+	margin: auto;
+	width: 50%;
+	padding: 10px;
+	text-align: center;
+	display: flex;
+  flex-direction: column;
+  justify-content: center
+}
+
+.myBox {
+	padding: 12px 20px;
+	margin: 8px 0;
+	box-sizing: border-box;
+}
+
