@@ -204,10 +204,6 @@
         $full_publish_date = $publish_date_month . " " . $publish_date_day . " " . $publish_date_year;
         echo "<p id='finalCitationBox'>" . $author_last_name . ", " . $author_first_name . ". \"" . $articleTitle . "\". " . "<i>" . $publisher . "</i>. " . " " . $full_publish_date . ". " . " " . $accessed_date . "<br>" . $URL . "</p>";
       }
-      else {
-        echo "<p>broken</p>";
-        echo $citationStyle;
-      }
     ?>
     <!--  <h1 style="color:black" onclick="populateStorage()">click</h1> -->
     <hr>
