@@ -1,19 +1,6 @@
-<?php session_start(); ?>
-<html>
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>CiteIt!</title>
-  <link rel="stylesheet" href="css/main.css" type="text/css">
-  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-</head>
-<body>
-  <div class="titleBar">
-    <h1><a href="http://localhost:8888/">CiteIt!</a></h1>
-  </div>
+ <?php session_start(); 
 
-<?php
+
   include('simple_html_dom.php');
   $html = new simple_html_dom();
   $html->load_file($_POST["myUrl"]); 
@@ -67,9 +54,9 @@
     $articleTitleIsNull = false;
     $articleTitle = $meta_title;
   }
-?>
 
-<?php //convert article:published_time to d M Y
+
+ //convert article:published_time to d M Y
   if($property_pubishedTime != null) {
     $publishedDateIsNull = false;
     $publishedTime = $property_pubishedTime;
@@ -92,12 +79,12 @@
   $publish_date_month = $publish_date_array[1];
 
   $full_publish_date = $publish_date_month . " " . $publish_date_day . " " . $publish_date_year;
-?>
 
-<div class="container">
-  <h3>What we got</h3>
 
-  <?php 
+echo "<div class='container'><br>
+  <h3>What we got</h3>";
+
+   
     if($name_author != null) {
       $authorIsNull = false;
       $author = $name_author;
@@ -123,26 +110,26 @@
       $author = $name_sailthru_author;
       echo "<p><b>author</b>: <span id='author'>" . $name_sailthru_author . "</span></p>";
     }
-  ?>
+  
 
-  <?php //author styling. lastName, firstName
+   //author styling. lastName, firstName
     $str = $author;
     $str_explode = (explode(" ", $str));
     $author_last_name = $str_explode[1];
     $author_first_name = $str_explode[0];
 
     $author_first_name_first_letter = $author_first_name[0]; 
-  ?>
+  
 
-  <p><b>url</b>: <span id="URL"> <?php echo $_POST["myUrl"] ?></span></p>
-  <?php if($websiteTitle != null) {echo "<p><b>website title</b>: <span id='websiteTitle'>" . $websiteTitle . "</span></p>";} ?>
-  <?php if($articleTitle != null) {echo "<p><b>article title</b>: <span id='articleTitle'>" . $articleTitle . "</span></p>";} ?>
-  <?php if($publisher != null) {echo "<p><b>publisher</b>: <span id='publisher'>" . $publisher . "</span></p>";} ?>
-  <?php if($publishedTime != null) {echo "<p><b>electronically published</b>: <span id='full_publish_date'>" . $full_publish_date . "</span></p>";} ?>
-  <?php if($accessed_date != null) {echo "<p><b>Date Accessed</b>: <span id='accessed_date'>" . $accessed_date . "</span></p>";} ?>
+  echo "<p><b>url</b>: <span id='URL'>" . $_POST['myUrl'] . "</span></p>";
+   if($websiteTitle != null) {echo "<p><b>website title</b>: <span id='websiteTitle'>" . $websiteTitle . "</span></p>";} 
+   if($articleTitle != null) {echo "<p><b>article title</b>: <span id='articleTitle'>" . $articleTitle . "</span></p>";} 
+   if($publisher != null) {echo "<p><b>publisher</b>: <span id='publisher'>" . $publisher . "</span></p>";} 
+   if($publishedTime != null) {echo "<p><b>electronically published</b>: <span id='full_publish_date'>" . $full_publish_date . "</span></p>";} 
+   if($accessed_date != null) {echo "<p><b>Date Accessed</b>: <span id='accessed_date'>" . $accessed_date . "</span></p>";} 
  
 
-  <?php
+  
     $_SESSION['citationStyle'] = $citationStyle;
     $_SESSION['author'] = $author;
     $_SESSION['author_last_name'] = $author_last_name;
@@ -157,11 +144,11 @@
     $_SESSION['publish_date_day'] = $publish_date_day;
     $_SESSION['publish_date_year'] = $publish_date_year;
     $_SESSION['publish_date_month'] = $publish_date_month;
-  ?>
+  
 
 
-  <form action="results.php" method="post">
-    <?php
+  echo "<form action='results.php' method='post'>";
+    
     if( $authorIsNull == true || $websiteTitleIsNull == true || $articleTitleIsNull == true || $publisherIsNull == true || $publishedDateIsNull == true) {
 
         echo "<hr>";
@@ -182,8 +169,9 @@
       if($publishedDateIsNull == true) {
         echo '<p><b>published Date: </b><input type="text" id="datepicker" placeholder="click to select date" name="datepickerDate"></p>';
       }
-    ?>
-  <input type="submit" value="Cite">
+  ?>
+    
+  <!-- <input type="submit" value="Cite">
   </form>
 </div>
 
@@ -197,6 +185,4 @@
           dateFormat: "mm-dd-yy"
         });
       } );
-  </script>
-</body>
-</html>
+  </script> -->
