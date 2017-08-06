@@ -11,3 +11,4 @@ Web app that allows for easy creation of citations using popular citation styles
 * Switch date and month for accessed date for Chicago and APA
 * Allow old citations to be edited
 * Implent karma/jasmine and write unit tests
+* Only display #squareTwo if there is a citation
