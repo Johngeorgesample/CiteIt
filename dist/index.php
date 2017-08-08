@@ -35,6 +35,8 @@
       </form>
     </div>
 
+   
+
     <div id="squareTwo">
      <?php
       if(isset($_POST['myUrl']) && !empty($_POST['myUrl'])) {
@@ -207,11 +209,12 @@
                 if($publishedDateIsNull == true) {
                   echo '<p><b>published Date: </b><input type="text" id="datepicker" placeholder="click to select date" name="datepickerDate"></p>';
                 }
-      
-              
             
       }
      ?>
+     <input type="submit" value="Cite">
+  </form>
+</div>
     </div>
 
     <div id="squareThree">
@@ -222,6 +225,15 @@
  
   
   <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script>
+    $( function() {
+        $( "#datepicker" ).datepicker({
+          changeMonth: true,
+          changeYear: true,
+          dateFormat: "mm-dd-yy"
+        });
+      } );
+  </script> 
   <script>
       $(function () {
           $('a[href*=#]:not([href=#])').click(function () {
